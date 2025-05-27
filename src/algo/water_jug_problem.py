@@ -1,30 +1,50 @@
-from src.core.search_problem import SearchProblem
+from operator import truediv
+
+def solve(x, y, jug_a, jug_b, goal, path):
+    print (f"visiting ({x}, {y})")
+
+    if x == goal or y == goal:
+        print("GOAL REACHED!")
+        for step in path:
+            print(step)
+            print(f"Final state: ({x}, {y})")
+        return True
+
+    if (x, y) in path:
+        return False
+
+    path = path + [(x, y)]
+
+    # Try to pour A -> B
+    # transfer: how much can be poured
+    transfer = min(x, jug_b - y)
+    if solve(x - transfer, y + transfer, jug_a, jug_b, goal, path):
+        return True
+
+    # empty B
+    if solve(x, 0, jug_a, jug_b, goal, path):
+        return True
+
+    # empty A
+    if solve(0, y, jug_a, jug_b, goal, path):
+        return True
+
+    # fill A
+    if solve(jug_a, y, jug_a, jug_b, goal, path):
+        return True
+
+    # Transfer B->A (y or the space available)
+    transfer = min(y, jug_a - x)
+    if solve(x + transfer, y - transfer, jug_a, jug_b, goal, path):
+        return True
+
+    return False
 
 
-class WaterJugProblem(SearchProblem):
-    def __init__(self, cap1, cap2, goal):
-        self.cap1 = cap1
-        self.cap2 = cap2
-        self.goal = goal
+if __name__ == "__main__":
+    jug_a = 4
+    jug_b = 3
+    goal = 2
 
-    def initial_state(self):
-        return 0, 0
-
-    def is_goal(self, state):
-        return self.goal in state
-
-    # this allow the value to be stuck in has table
-    def hashable_state(self, state):
-        return tuple(state)
-
-    # this is like advance
-    def successor(self, state):
-        x,y = state
-        cap1 = self.cap1
-        cap2 = self.cap2
-        result = []
-
-        def add(new_x, new_y, action):
-            print(f"Generating: ({new_x} {new_y} via {action})")
-            result.append((new_x, new_y, action))
-
+    # start with 0 in each jug
+    solve(0,0, jug_a, jug_b, goal, [])
