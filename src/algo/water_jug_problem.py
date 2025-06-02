@@ -1,5 +1,3 @@
-from operator import truediv
-
 def solve(x, y, jug_a, jug_b, goal, path):
     print (f"visiting ({x}, {y})")
 
@@ -10,6 +8,7 @@ def solve(x, y, jug_a, jug_b, goal, path):
             print(f"Final state: ({x}, {y})")
         return True
 
+    # we've already searched this path.
     if (x, y) in path:
         return False
 
