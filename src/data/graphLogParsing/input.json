@@ -1,0 +1,58 @@
+{
+    "payload": {
+        "event": "QUERY_OPERATION_COMPLETED",
+        "operation_name": "FeedGroupNestedClients",
+        "query_signature": "b773e7bd9cb91f6e6bc6832622652ccc196ce14a3ae5eba7b93941dba160f43a",
+        "total_response_latency_ms": 818,
+        "downstream_log": [
+            {
+                "status": 200,
+                "service_name": "tokie",
+                "method": "get",
+                "path": "/signed/principals/current",
+                "span_id": "1b8938cfa0712ed3",
+                "offset_ms": 2,
+                "latency_ms": 20,
+                "subgraphErrors": [],
+                "timed_out": false
+            },
+            {
+                "status": 200,
+                "service_name": "Agraph-svc",
+                "method": "post",
+                "path": "/graphql",
+                "span_id": "f3920668bf68c341",
+                "offset_ms": 32,
+                "latency_ms": 780,
+                "subgraphErrors": [],
+                "timed_out": false
+            }
+        ],
+        "subgraph_downstream_log": [
+            {
+                "service_name": "grouper",
+                "offset_ms": 83,
+                "latency_ms": 15,
+                "subgraph_service_name": "graph-svc",
+                "type": {
+                    "method": "GET",
+                    "path": "/api/v2/group/92851732480",
+                    "request_type": "HTTP",
+                    "code": 200
+                }
+            },
+            {
+                "service_name": "hydrant",
+                "offset_ms": 104,
+                "latency_ms": 251,
+                "subgraph_service_name": "graph-svc",
+                "type": {
+                    "method": "POST",
+                    "path": "/api/v3/nested/networks/31234/feeds/group/92851732480",
+                    "request_type": "HTTP",
+                    "code": 200
+                }
+            }
+        ]
+    }
+}
