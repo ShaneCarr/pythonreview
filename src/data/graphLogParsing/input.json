@@ -1,58 +1,199 @@
 {
-    "payload": {
-        "event": "QUERY_OPERATION_COMPLETED",
-        "operation_name": "FeedGroupNestedClients",
-        "query_signature": "b773e7bd9cb91f6e6bc6832622652ccc196ce14a3ae5eba7b93941dba160f43a",
-        "total_response_latency_ms": 818,
-        "downstream_log": [
-            {
-                "status": 200,
-                "service_name": "tokie",
-                "method": "get",
-                "path": "/signed/principals/current",
-                "span_id": "1b8938cfa0712ed3",
-                "offset_ms": 2,
-                "latency_ms": 20,
-                "subgraphErrors": [],
-                "timed_out": false
-            },
-            {
-                "status": 200,
-                "service_name": "Agraph-svc",
-                "method": "post",
-                "path": "/graphql",
-                "span_id": "f3920668bf68c341",
-                "offset_ms": 32,
-                "latency_ms": 780,
-                "subgraphErrors": [],
-                "timed_out": false
-            }
-        ],
-        "subgraph_downstream_log": [
-            {
-                "service_name": "grouper",
-                "offset_ms": 83,
-                "latency_ms": 15,
-                "subgraph_service_name": "graph-svc",
-                "type": {
-                    "method": "GET",
-                    "path": "/api/v2/group/92851732480",
-                    "request_type": "HTTP",
-                    "code": 200
-                }
-            },
-            {
-                "service_name": "hydrant",
-                "offset_ms": 104,
-                "latency_ms": 251,
-                "subgraph_service_name": "graph-svc",
-                "type": {
-                    "method": "POST",
-                    "path": "/api/v3/nested/networks/31234/feeds/group/92851732480",
-                    "request_type": "HTTP",
-                    "code": 200
-                }
-            }
-        ]
-    }
+"payload": {
+	"operation_name": "subgraph_FeedGroupNestedClients",
+	"validation_errors_count": 0,
+	"runtime_errors_count": 0,
+	"operation_type": "Query",
+	"downstream_errors_count": 0,
+	"status": 200,
+	"authorization_errors_count": 0,
+	"persisted_query_result": "not_applicable",
+	"query_signature": "87d91cc3bc93d179d1b9416edff7bcac8b383279bb6883e7df0525212431e84e",
+	"ratelimit_errors_count": 0,
+	"field_count": 2467,
+	"total_errors_count": 0,
+	"user_agent": "graph-gw/1914df14dff01b785e98c43e87f0ec26a43011aa/Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.XXX Safari/537.36 Edg/137.0.0.0",
+	"downstream_badrequest_errors_count": 0,
+	"category": "SUCCESS",
+	"event": "QUERY_OPERATION_COMPLETED",
+	"downstream_ratelimit_errors_count": 0,
+	"nginx_queue_latency": 2,
+	"app_infra_latency_ms": 250,
+	"downstream_log": [
+		{
+			"status": 200,
+			"service_name": "grouper",
+			"method": "GET",
+			"offset_ms": 155,
+			"path": "/api/v2/group/13310776",
+			"span_id": "2a33cfc817b8b5a7",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10166",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 23,
+			"connect_time": 0,
+			"content_length": 1007,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/guestsCount",
+				"/group/displayName",
+				"/group/isMoveThreadToThisGroupRestricted",
+				"/group/isMultiTenantOrganizationGroup",
+				"/group/officeUnifiedGroupId",
+				"..."
+			],
+			"cancelled": false,
+			"circuit_open": false
+		},
+		{
+			"status": 200,
+			"method": "POST",
+			"offset_ms": 192,
+			"path": "/api/v3/nested/networks/107/feeds/group/13310776",
+			"span_id": "9bebc088433013b2",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10112",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 311,
+			"connect_time": 0,
+			"content_length": 28422,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/feed/pinnedThreads",
+				"/group/feed/threads",
+				"/group/feed/unseenThreads"
+			],
+			"cancelled": false,
+			"circuit_open": false
+		},
+		{
+			"status": 200,
+			"service_name": "grouper",
+			"method": "GET",
+			"offset_ms": 542,
+			"path": "/api/v2/group_members/groups/13310776",
+			"span_id": "7f18cacb5c61aa8a",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10166",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 16,
+			"connect_time": 0,
+			"content_length": 247,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/feed/threads/edges[0]/node/topLevelReplies/edges[0]/node/senderBadges",
+				"/group/feed/threads/edges[0]/node/threadStarter/senderBadges"
+			],
+			"cancelled": false,
+			"circuit_open": false
+		},
+		{
+			"status": 200,
+			"service_name": "hydrant",
+			"method": "POST",
+			"offset_ms": 545,
+			"path": "/api/v3/nested/threads/3298841750102016,3336862471512064",
+			"span_id": "787bef6dbeb21105",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10112",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 218,
+			"connect_time": 0,
+			"content_length": 24759,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/feed/pinnedThreads/verifiedReply",
+				"/group/feed/pinnedThreads/viewerMutationId",
+				"/group/feed/pinnedThreads/viewerCanDelete",
+				"/group/feed/pinnedThreads/viewerCanMarkAsQuestion",
+				"/group/feed/pinnedThreads/scope",
+				"..."
+			],
+			"cancelled": false,
+			"circuit_open": false
+		},
+		{
+			"status": 200,
+			"service_name": "grouper",
+			"method": "GET",
+			"offset_ms": 803,
+			"path": "/api/v2/group/976603",
+			"span_id": "a17d570f8dde799f",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10166",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 16,
+			"connect_time": 0,
+			"content_length": 1079,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/feed/pinnedThreads[1]/threadStarter/sharedMessage/thread/group/isOfficial",
+				"/group/feed/pinnedThreads[1]/threadStarter/sharedMessage/thread/group/isMultiTenantOrganizationGroup"
+			],
+			"cancelled": false,
+			"circuit_open": false
+		},
+		{
+			"status": 200,
+			"service_name": "grouper",
+			"method": "GET",
+			"offset_ms": 803,
+			"path": "/api/v2/group_members/groups/13310776",
+			"span_id": "4404c3f9898958ee",
+			"protocol": "HTTP",
+			"base_url": "http://172.17.42.1:10166",
+			"exception_message": null,
+			"exception_type": null,
+			"downstream_ms": 16,
+			"connect_time": 0,
+			"content_length": 254,
+			"retry_count": 0,
+			"dns_ms": 0,
+			"delay_ms": 0,
+			"trigger_paths": [
+				"/group/feed/pinnedThreads[0]/topLevelReplies/edges[0]/node/senderBadges",
+				"/group/feed/pinnedThreads[0]/threadStarter/senderBadges"
+			],
+			"cancelled": false,
+			"circuit_open": false
+		}
+	],
+	"tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+	"application_id": 40443904,
+	"office_id": "c6a7217c-1f7d-4aed-8732-94fb5e1e4076",
+	"user_id": 3779901865984,
+	"treatments": "{\"ClientForward\":{\"AddDelegateAPIMigration\":\"true\",\"AdhocAudienceAnnouncement\":\"true\",\"AdhocAudiencePickerCustomGroups\":\"true\",\"AdminMuteUser\":\"true\",\"AdminRoleManagement\":\"true\",\"BackendGraphQLApiVNextRolloutCanary\":\"true\",\"BackendGraphQLApiVNextRolloutDogfood\":\"true\",\"BackendGraphQLApiVNextRolloutProd100\":\"true\",\"BackendGraphQLApiVNextRolloutProd25\":\"true\",\"BackendGraphQLApiVNextRolloutProd50\":\"true\",\"BackendLiveEventFeedCaching\":\"true\",\"BackendStreamieCosmos\":\"true\",\"CampaignSashAvatar\":\"true\",\"CommunityInfoEdit\":\"true\",\"ConsolidatedEventsGrid\":\"true\",\"DelegateStorylineAccessAPIMigration\":\"true\",\"DraftSorting\":\"true\",\"EnableDeleteOptions\":\"true\",\"ExtendedUnSeenCountEnabled\":\"true\",\"GroupsFromGrouper\":\"true\",\"ImageCompressionWeb\":\"true\",\"LoadThreadDataWhileRouting\":\"enabled\",\"MTOBadge\":\"true\",\"MTOBlendedInbox\":\"true\",\"MTOCampaigns\":\"true\",\"MTOGraphVNextResolvers\":\"true\",\"MultiTenantOrganization\":\"true\",\"MutedAutoPlay\":\"enabled\",\"NoWFMessageBodyInGroupMessageCreationResponse\":\"enabled\",\"OnePlayerV2\":\"true\",\"PrivateRepliesAMA\":\"true\",\"PrivateRepliesEditPendingThreads\":\"true\",\"PrivateRepliesQnANotifications\":\"true\",\"RemoveDelegateAPIMigration\":\"true\",\"TeamsQnAPostAsModerator\":\"true\",\"ThirdPartyCookieFix\":\"true\",\"UseBatchedFiles\":\"true\",\"UserGroupsFromGrouper\":\"enabled\"},\"CrossPlatform\":{\"CommunityExperts\":\"enabled\",\"DomainMigration\":\"true\",\"PrivateReplies\":\"true\",\"ServerSharePointWebLinks\":\"enabled\",\"SharePointVideoLinkPreviews\":\"true\",\"StorylineMediaPostGA\":\"true\"},\"YammerClients\":{\"GraphqlForcedTracing\":\"true\",\"OfficeTopics\":\"true\"},\"Version\":\"1\"}",
+	"version": "1.0.0",
+	"infra_latency_ms": 248,
+	"jersey_latency_ms": 2,
+	"treatment_etag": "\"fhJb3ke0LWQeBsUgt7M5RQ5n1PlHKHkW74Tq5uQ0Z1M=\"",
+	"timings": {
+		"gql.exeOp.offset": 9,
+		"gql.exeOp.duration": 811,
+		"gql.exe.offset": 9,
+		"gql.exe.duration": 811
+	},
+	"node_id_without_network_id_count": 1,
+	"aad_token_switch_count": 0,
+	"exceptions": [],
+	"query_path": "",
+	"token_type": "YAMMER_AAD_USER_TOKEN",
+	"is_experimental_instance": false
+}
+
 }

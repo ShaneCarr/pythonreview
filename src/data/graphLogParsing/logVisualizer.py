@@ -39,6 +39,7 @@ from abc import ABC, abstractmethod
 from enum import Enum
 import argparse
 
+
 def show_plot(fig, title="chart"):
     """Show plot or save it if in non-interactive environment."""
     backend = matplotlib.get_backend()
@@ -75,7 +76,8 @@ def show_plot(fig, title="chart"):
             # Fallback to saving
             filename = f"{title.replace(' ', '_').replace('/', '_')}.png"
             fig.savefig(filename, dpi=300, bbox_inches='tight')
-            print(f"📊 FALLBACK: Plot saved as: {filename}")  # <- This closing parenthesis was missing!
+            print(f"📊 FALLBACK: Plot saved as: {filename}")
+
 
 # ================================
 # DATA STRUCTURES
@@ -143,25 +145,55 @@ class LogFieldExtractor(ABC):
 
 
 class StandardLogExtractor(LogFieldExtractor):
-    """Extractor for the standard log format you provided"""
+    """Extractor that handles multiple log format variations"""
 
     def extract_service_name(self, event: Dict[str, Any]) -> str:
         return event.get('service_name', 'unknown')
 
     def extract_timing(self, event: Dict[str, Any]) -> Tuple[int, int]:
-        offset = event.get('offset_ms', 0)
-        latency = event.get('latency_ms', 0)
+        """Extract offset and latency, handling multiple field name conventions"""
+
+        # Try different offset field names
+        offset = (event.get('offset_ms', 0) or
+                  event.get('offset', 0) or
+                  0)
+
+        # Try different latency field names - THIS IS THE KEY FIX!
+        latency = (event.get('latency_ms', 0) or
+                   event.get('downstream_ms', 0) or  # Your first log format uses this
+                   event.get('duration_ms', 0) or
+                   0)
+
+        print(
+            f"DEBUG: Extracting timing for {event.get('service_name', 'unknown')}: offset={offset}, latency={latency}")
+
         return offset, latency
 
     def extract_request_details(self, event: Dict[str, Any]) -> Tuple[str, str, int]:
-        method = event.get('method', 'UNKNOWN')
-        path = event.get('path', '/')
+        """Extract method, path, and status with flexible field handling"""
 
-        # Handle nested status codes
-        if 'type' in event and isinstance(event['type'], dict):
-            status = event['type'].get('code', 200)
-        else:
-            status = event.get('status', 200)
+        # Handle method - try direct field or nested in type
+        method = event.get('method', 'UNKNOWN')
+        if method == 'UNKNOWN' and 'type' in event and isinstance(event['type'], dict):
+            method = event['type'].get('method', 'UNKNOWN')
+
+        method = method.upper()
+
+        # Handle path - try direct field or nested in type
+        path = event.get('path', '/')
+        if path == '/' and 'type' in event and isinstance(event['type'], dict):
+            path = event['type'].get('path', '/')
+
+        # Handle status - try multiple locations
+        status = 200  # default
+
+        if 'status' in event:
+            status = event['status']
+        elif 'type' in event and isinstance(event['type'], dict):
+            if 'code' in event['type']:
+                status = event['type']['code']
+            elif 'status' in event['type']:
+                status = event['type']['status']
 
         return method, path, status
 
@@ -189,18 +221,23 @@ class GenericLogParser:
 
         # Extract downstream events
         downstream_events = payload.get('downstream_log', [])
-        for event in downstream_events:
+        print(f"DEBUG: Found {len(downstream_events)} downstream events")
+        for i, event in enumerate(downstream_events):
+            print(f"DEBUG: Processing downstream event {i}: {event.get('service_name', 'unknown')}")
             timing_event = self._create_timing_event(event, 'downstream')
             if timing_event:
                 events.append(timing_event)
 
         # Extract subgraph events
         subgraph_events = payload.get('subgraph_downstream_log', [])
-        for event in subgraph_events:
+        print(f"DEBUG: Found {len(subgraph_events)} subgraph events")
+        for i, event in enumerate(subgraph_events):
+            print(f"DEBUG: Processing subgraph event {i}: {event.get('service_name', 'unknown')}")
             timing_event = self._create_timing_event(event, 'subgraph')
             if timing_event:
                 events.append(timing_event)
 
+        print(f"DEBUG: Total events created: {len(events)}")
         return events
 
     def _extract_payload(self, log_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -221,10 +258,15 @@ class GenericLogParser:
             offset_ms, latency_ms = self.extractor.extract_timing(event)
             method, path, status = self.extractor.extract_request_details(event)
 
+            # Skip events with zero latency (they're not meaningful for visualization)
+            if latency_ms <= 0:
+                print(f"DEBUG: Skipping event with zero latency: {service_name}")
+                return None
+
             # Create a meaningful name
             name = f"{service_name}:{method}:{path.split('/')[-1]}"
 
-            return TimingEvent(
+            timing_event = TimingEvent(
                 name=name,
                 service_name=service_name,
                 offset_ms=offset_ms,
@@ -235,6 +277,10 @@ class GenericLogParser:
                 event_type=event_type,
                 span_id=event.get('span_id')
             )
+
+            print(f"DEBUG: Created timing event: {service_name} at {offset_ms}ms for {latency_ms}ms")
+            return timing_event
+
         except (KeyError, TypeError) as e:
             print(f"Warning: Could not parse event {event}: {e}")
             return None
@@ -819,7 +865,7 @@ def demo_with_your_log():
     # Generate the chart
     print("\n=== Generating Chart ===")
     fig = generator.generate_from_text(your_log)
-    show_plot(fig, "FeedGroupNestedClients_Timeline")  # Changed from plt.show()
+    show_plot(fig, "FeedGroupNestedClients_Timeline")
 
     # Also show different visualization styles
     print("\n=== Different Styles ===")
@@ -831,68 +877,9 @@ def demo_with_your_log():
         group_parallel=False
     )
     fig_minimal = generator.generate_with_config(your_log, config_minimal, "Minimal Style")
-    show_plot(fig_minimal, "Minimal_Style")  # Changed from plt.show()
+    show_plot(fig_minimal, "Minimal_Style")
 
 
-def main():
-    """Command line interface"""
-    parser = argparse.ArgumentParser(description="Generate Gantt charts from structured logs")
-    parser.add_argument("input", help="Input log file path or '-' for stdin")
-    parser.add_argument("-o", "--output", help="Output image file path")
-    parser.add_argument("-t", "--title", help="Chart title")
-    parser.add_argument("--style", choices=["classic", "modern", "minimal"],
-                        default="modern", help="Visual style")
-    parser.add_argument("--no-group", action="store_true",
-                        help="Don't group parallel operations")
-    parser.add_argument("--color-by-type", action="store_true",
-                        help="Color by event type instead of service")
-    parser.add_argument("--analyze-only", action="store_true",
-                        help="Only analyze log, don't generate chart")
-
-    args = parser.parse_args()
-
-    # Read input
-    if args.input == "-":
-        import sys
-        log_text = sys.stdin.read()
-    else:
-        with open(args.input, 'r') as f:
-            log_text = f.read()
-
-    generator = LogGanttGenerator()
-
-    if args.analyze_only:
-        # Just analyze and print results
-        analysis = generator.analyze_log(log_text)
-        print(json.dumps(analysis, indent=2))
-        return
-
-    # Generate chart
-    config = VisualizationConfig(
-        style=ChartStyle(args.style),
-        group_parallel=not args.no_group,
-        color_by_service=not args.color_by_type
-    )
-
-    try:
-        fig = generator.generate_with_config(log_text, config, args.title)
-
-        if args.output:
-            fig.savefig(args.output, dpi=300, bbox_inches='tight')
-            print(f"Chart saved to {args.output}")
-        else:
-            plt.show()
-
-    except Exception as e:
-        print(f"Error: {e}")
-        return 1
-
-    return 0
-
-
-# ================================
-# SIMPLE TEST FUNCTION
-# ================================
 def test_basic_functionality():
     """Test basic functionality with minimal sample"""
     print("=== Testing Basic Functionality ===")
@@ -942,37 +929,6 @@ def test_basic_functionality():
     except Exception as e:
         print(f"✗ Test failed: {e}")
         return False
-
-
-def run_input_test():
-    """Quick runner for the input file test"""
-    print("=== Quick Input File Test ===")
-    print(f"Backend: {matplotlib.get_backend()}")
-    print(f"Working directory: {os.getcwd()}")
-    print()
-
-    success = test_from_input_file()
-
-    if success:
-        print("\n🎉 All good! Your JSON data is working perfectly.")
-    else:
-        print("\n❌ Something went wrong. Check the error messages above.")
-
-
-# Update the main section to include the new test option
-def run_full_demo():
-    """Run the full demo including backend detection and chart generation"""
-    print("=== Backend Detection ===")
-    print(f"PyCharm detected: {'pydevd' in sys.modules}")
-    print(f"Current backend: {matplotlib.get_backend()}")
-
-    # Run basic test first
-    if test_basic_functionality():
-        print("\n" + "=" * 50)
-        # Then run demo with your log
-        demo_with_your_log()
-    else:
-        print("Basic test failed, skipping demo")
 
 
 def test_from_input_file():
@@ -1035,6 +991,93 @@ def test_from_input_file():
     except Exception as e:
         print(f"❌ Error: {e}")
         return False
+
+
+def run_input_test():
+    """Quick runner for the input file test"""
+    print("=== Quick Input File Test ===")
+    print(f"Backend: {matplotlib.get_backend()}")
+    print(f"Working directory: {os.getcwd()}")
+    print()
+
+    success = test_from_input_file()
+
+    if success:
+        print("\n🎉 All good! Your JSON data is working perfectly.")
+    else:
+        print("\n❌ Something went wrong. Check the error messages above.")
+
+
+def run_full_demo():
+    """Run the full demo including backend detection and chart generation"""
+    print("=== Backend Detection ===")
+    print(f"PyCharm detected: {'pydevd' in sys.modules}")
+    print(f"Current backend: {matplotlib.get_backend()}")
+
+    # Run basic test first
+    if test_basic_functionality():
+        print("\n" + "=" * 50)
+        # Then run demo with your log
+        demo_with_your_log()
+    else:
+        print("Basic test failed, skipping demo")
+
+
+def main():
+    """Command line interface"""
+    parser = argparse.ArgumentParser(description="Generate Gantt charts from structured logs")
+    parser.add_argument("input", help="Input log file path or '-' for stdin")
+    parser.add_argument("-o", "--output", help="Output image file path")
+    parser.add_argument("-t", "--title", help="Chart title")
+    parser.add_argument("--style", choices=["classic", "modern", "minimal"],
+                        default="modern", help="Visual style")
+    parser.add_argument("--no-group", action="store_true",
+                        help="Don't group parallel operations")
+    parser.add_argument("--color-by-type", action="store_true",
+                        help="Color by event type instead of service")
+    parser.add_argument("--analyze-only", action="store_true",
+                        help="Only analyze log, don't generate chart")
+
+    args = parser.parse_args()
+
+    # Read input
+    if args.input == "-":
+        import sys
+        log_text = sys.stdin.read()
+    else:
+        with open(args.input, 'r') as f:
+            log_text = f.read()
+
+    generator = LogGanttGenerator()
+
+    if args.analyze_only:
+        # Just analyze and print results
+        analysis = generator.analyze_log(log_text)
+        print(json.dumps(analysis, indent=2))
+        return
+
+    # Generate chart
+    config = VisualizationConfig(
+        style=ChartStyle(args.style),
+        group_parallel=not args.no_group,
+        color_by_service=not args.color_by_type
+    )
+
+    try:
+        fig = generator.generate_with_config(log_text, config, args.title)
+
+        if args.output:
+            fig.savefig(args.output, dpi=300, bbox_inches='tight')
+            print(f"Chart saved to {args.output}")
+        else:
+            plt.show()
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return 1
+
+    return 0
+
 
 # Add this so you can call the function directly
 if __name__ == "__main__":
