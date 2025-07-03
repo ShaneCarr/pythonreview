@@ -1,3 +1,22 @@
+
+"""
+Missionaries and Cannibals Problem
+----------------------------------
+
+- There are 3 missionaries and 3 cannibals on one side of a river.
+- They all need to cross to the other side using a boat.
+- The boat can carry either 1 or 2 people at a time.
+- At no time, on either side of the river, can the number of cannibals
+  exceed the number of missionaries — unless there are zero missionaries
+  on that side.
+
+  (If cannibals outnumber missionaries on a side, the missionaries
+  would be eaten.)
+
+Goal:
+- Move all 3 missionaries and 3 cannibals safely to the other side
+  of the river without violating the rules above.
+"""
 from typing import NamedTuple, List, Tuple
 from enum import Enum
 
@@ -9,9 +28,7 @@ class Side(NamedTuple):
     missionaries:int
     cannibals:int
 
-
-
-def solve(left: Side, right: Side, side:BoatSide, path: List[Tuple[Side, Side, BoatSide]]):
+def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, BoatSide]]):
     current = [[left], [right]]
     #check path to see if we visited this already
     if current in path:
@@ -20,8 +37,8 @@ def solve(left: Side, right: Side, side:BoatSide, path: List[Tuple[Side, Side, B
     # check left to  see if c > m return false
     if left.cannibals > left.missionaries or right.cannibals > right.missionaries:
         return False
-    if left.cannibals == 0 and left.missionaries == 0:
 
+    if left.cannibals == 0 and left.missionaries == 0:
         print("Found result")
         for step in path:
             left, right, boat = step
