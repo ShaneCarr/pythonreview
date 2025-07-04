@@ -36,6 +36,7 @@ def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, 
 
     # check left to  see if c > m return false
     if left.cannibals > left.missionaries or right.cannibals > right.missionaries:
+        path += current
         return False
 
     if left.cannibals == 0 and left.missionaries == 0:
