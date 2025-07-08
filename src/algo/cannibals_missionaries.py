@@ -28,6 +28,17 @@ class Side(NamedTuple):
     missionaries:int
     cannibals:int
 
+def move(source: Side, destination: Side, cannibals: int, missionary: int) -> Tuple[Side, Side]:
+    move_canbibals = min(cannibals, source.cannibals)
+    source.cannibals -= move_canbibals
+    destination.cannibals += cannibals
+
+    move_missionaries = min(missionary, source.missionaries)
+    source.missionaries -= move_missionaries
+    destination.missionaries += move_missionaries
+
+    return source, destination
+
 def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, BoatSide]]):
     current = [[left], [right]]
     #check path to see if we visited this already
@@ -39,6 +50,7 @@ def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, 
         path += current
         return False
 
+    # moved everyone.
     if left.cannibals == 0 and left.missionaries == 0:
         print("Found result")
         for step in path:
@@ -51,7 +63,9 @@ def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, 
     # on the left since we are moving right
     if side == BoatSide.LEFT:
         # move one or two from left to right.
-        # options move case L->R: 1c-1m,2c,2m, c, m
+        # options move case L->R: 1c-1m,2c,2m, c, m, move_nothing
+
+
         transferC = min(left.cannibals, 1)
         transferM = min(left.missionaries, 1)
 
