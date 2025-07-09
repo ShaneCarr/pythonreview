@@ -19,12 +19,13 @@ Goal:
 """
 from typing import NamedTuple, List, Tuple
 from enum import Enum
-
+from dataclasses import dataclass
 class BoatSide(Enum):
     LEFT = 0
     RIGHT = 1
 
-class Side(NamedTuple):
+@dataclass
+class Side:
     missionaries:int
     cannibals:int
 
@@ -39,87 +40,47 @@ def move(source: Side, destination: Side, cannibals: int, missionary: int) -> Tu
 
     return source, destination
 
-def solve(left: Side, right: Side, side: BoatSide, path: List[Tuple[Side, Side, BoatSide]]):
+def solve(left: Side, right: Side, path: List[Tuple[Side, Side]]):
     current = [[left], [right]]
     #check path to see if we visited this already
     if current in path:
         return False
 
-    # check left to  see if c > m return false
+    # on either side cannibals can't be great than missionaries.
     if left.cannibals > left.missionaries or right.cannibals > right.missionaries:
         path += current
         return False
 
-    # moved everyone.
+    # moved everyone from left to right. so left needs to be 0
     if left.cannibals == 0 and left.missionaries == 0:
         print("Found result")
         for step in path:
-            left, right, boat = step
-            print(f"Left: {left}, Right: {right}, Boat on: {boat.name}")
+            left, right = step
+            print(f"Left: {left}, Right: {right}")
         return True
 
     path += current
 
-    # on the left since we are moving right
-    if side == BoatSide.LEFT:
-        # move one or two from left to right.
-        # options move case L->R: 1c-1m,2c,2m, c, m, move_nothing
+    left_after, right_after = move(left, right, 1, 1)
+    solve(left_after, right_after, path)
 
+    left_after, right_after = move(left, right, 2, 0)
+    solve(left_after, right_after, path)
 
-        transferC = min(left.cannibals, 1)
-        transferM = min(left.missionaries, 1)
+    left_after, right_after = move(left, right, 0, 2)
+    solve(left_after, right_after, path)
 
-        left_1 = left
-        right_1 = right
+    left_after, right_after = move(left, right, 1, 0)
+    solve(left_after, right_after, path)
 
-        left_1.missionaries -= transferM
-        right_1.missionaries += transferM
+    left_after, right_after = move(left, right, 0, 1)
+    solve(left_after, right_after, path)
 
-        left_1.cannibals -= transferC
-        right_1.cannibals += transferC
-
-        solve(left_1, right_1, BoatSide.RIGHT, path)
-
-        left_2 = left
-        right_2 = right
-
-        transferC = min(left.cannibals, 2)
-
-        left_2.cannibals -= transferC
-        right_2.cannibals += transferC
-
-        solve(left_2, right_2, BoatSide.RIGHT, path)
-
-        left_3 = left
-        right_3 = right
-
-        transferm = min(left.missionaries, 2)
-
-        left_3.missionaries -= transferm
-        right_3.missionaries += transferm
-
-        solve(left_3, right_3, BoatSide.RIGHT, path)
-
-    if side == BoatSide.RIGHT:
-        return True
-
-
-
-    solve(left[0], right[0], side + 1, path)
-    # check right to  see if c > m return false
-
-    # check right to see if the values are 3,3
-
-
-
-
-    # call solve transfering right to left or left to right dephding on what side boat is on.
-
-    return True
-
-
+    return False
 
 if __name__ == '__main__':
     # tuples are m,c
-    solve([3,3], [0,0], 0, 0, [])
+    left = Side(missionaries=3, cannibals=3)
+    right = Side(missionaries=0, cannibals=0)
+    solve(left, right, [])
 
