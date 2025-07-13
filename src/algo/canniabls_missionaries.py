@@ -17,6 +17,7 @@ Goal:
   of the river without violating the rules above.
 """
 from enum import Enum
+from lib.decorator import pass_by_value
 
 class BoatSide(Enum):
     LEFT = "left"
@@ -46,6 +47,7 @@ class BoatContents:
         self.cannibals = cannibals
         self.missionaries = missionaries
 
+@pass_by_value
 def move(state: GameState,  boatContents: BoatContents):
     # make generic concepts of source and destination for move.
     source = state.left
@@ -55,8 +57,16 @@ def move(state: GameState,  boatContents: BoatContents):
         source = state.right
         destination = state.left
 
-    # todo source.boat_Side =
+        # conceptually reset the boat location, so we alternate the boat locations (moving path back and forth)
+        # until we run out of or find a solution.
+        state.boat_Side = BoatSide.LEFT
 
+    # calculate the source destinaton change, and change the "side"
+    source.cannibals -= boatContents.cannibals
+    destination.cannibals += boatContents.cannibals
+
+    source.missionaries -= boatContents.missionaries
+    destination.missionaries += boatContents.missionaries
 
 if __name__ == "__main__":
     print("starting")
