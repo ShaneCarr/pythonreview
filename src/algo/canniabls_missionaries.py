@@ -17,7 +17,7 @@ Goal:
   of the river without violating the rules above.
 """
 from enum import Enum
-from lib.decorator import pass_by_value
+from libs.decorator import pass_by_value
 
 class BoatSide(Enum):
     LEFT = "left"
