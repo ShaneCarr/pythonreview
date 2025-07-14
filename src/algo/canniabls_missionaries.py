@@ -16,6 +16,7 @@ Goal:
 - Move all 3 missionaries and 3 cannibals safely to the other side
   of the river without violating the rules above.
 """
+from dataclasses import dataclass
 from enum import Enum
 from typing import List, Tuple, Optional, NamedTuple
 
@@ -60,13 +61,31 @@ class BoatContents:
 
 @pass_by_value
 def move(state: GameState,  boatContents: BoatContents) -> GameState:
+
     # make generic concepts of source and destination for move.
     if state.boat_side == BoatSide.RIGHT:
-        state.boat_Side = BoatSide.LEFT #boat needs to move boat directions each way it takes boat contents.
+        state.boat_side = BoatSide.LEFT #boat needs to move boat directions each way it takes boat contents.
         state.has_more = calculate_edges(state.right, state.left, state, boatContents) # todo remove variables, debugging
     else: #left
         state.boat_side = BoatSide.RIGHT #boat needs to move boat directions each way it takes boat contents.
         state.has_more = calculate_edges(state.left, state.right, state, boatContents) # todo remove variables, debugging
+
+
+
+    current = StateSnapshot(state.left.cannibals, state.left.missionaries, state.right.cannibals,
+                            state.right.missionaries, state.boat_side)
+
+    path_flattened = [StateSnapshot(l.cannibals,
+                                    l.missionaries,
+                                    r.cannibals,
+                                    r.missionaries,
+                                    b)
+                      for l, r, b in state.path]
+
+    # we visited this
+    if current in path_flattened:
+        print("avoiding cycle")
+        state.has_more = False
 
     state.path.append((state.left, state.right, state.boat_side))
     return state
@@ -144,7 +163,8 @@ def generate_combinations() -> List[BoatContents]:
     return boat_possibilities
 
 # i need something flatteded for cycle checking.
-class StateSnapshot(NamedTuple):
+@dataclass(frozen=True)
+class StateSnapshot:
     left_cannibals: int
     left_missionaries: int
     right_cannibals: int
@@ -155,24 +175,12 @@ def solve(state: GameState):
     # we need to move 1 or two at a time it's not possible to move zero
     # because who would be running the boat, unless the boat is a drone,
     # but that's not in the instructions above.
+
     boatContents_list = generate_combinations()
     for combination in boatContents_list:
         game_state = move(state, combination)
         has_visited :bool = False
 
-        current = (state.left.cannibals,
-                   state.right.missionaries,
-                   state.right.cannibals,
-                   state.left.missionaries,
-                   state.boat_side)
-
-        path_flattened = [StateSnapshot(l.cannibals, l.missionaries, r.cannibals, r.missionaries, b)
-                          for l, r, b in state.path]
-
-        # we visited this!
-        if current in path_flattened:
-            print("avoiding cycle")
-            return
 
         if game_state.has_more:
             solve(game_state)
