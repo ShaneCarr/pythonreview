@@ -89,7 +89,7 @@ def move(state: GameState,  boatContents: BoatContents) -> GameState:
 
     state.path.append((state.left, state.right, state.boat_side))
     return state
-
+ 
 # pass by reference, returns should continue.
 def calculate_edges(source: Side,
                     destination: Side,
