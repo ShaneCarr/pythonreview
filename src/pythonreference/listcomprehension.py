@@ -1,6 +1,6 @@
 from typing import List
 
-from src.algo.canniabls_missionaries import BoatContents
+from src.algo.cannibals_missionaries_v2 import BoatContents
 
 min_capacity : int = 1
 max_capacity : int = 2
