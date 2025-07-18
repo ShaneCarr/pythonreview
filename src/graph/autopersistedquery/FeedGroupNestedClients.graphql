@@ -1,0 +1,1326 @@
+
+Operation NameParams
+Selection
+https://web.c5devlab3.labs.yammer.dev/graphql?operationName=FeedGroupNestedClients&apiVnext=2 200
+- FeedGroupNestedClients
+
+group: node
+
+id = $groupId
+
+InlineFragment if Group
+
+x
+Raw Query
+Computed Query
+Response
+Raw Query Data
+
+query FeedGroupNestedClients($groupId: ID!, $threadCount: Int = 8, $replyCount: Int = 2, $secondLevelRepliesCount: Int = 0, $bestReplySecondLevelRepliesCount: Int = 0, $groupFeedType: GroupFeedType = ALL, $olderThan: String, $newerThan: String, $includeModerationState: Boolean = false, $skipBroadcasts: Boolean = false, $skipViewerIsFollowing: Boolean = false, $skipViewerLastSeenMessage: Boolean = false, $skipSeenByCount: Boolean = false, $skipShareCount: Boolean = false, $sortThreadsBy: GroupFeedThreadSortOrder, $sortRepliesBy: ThreadReplySortOrder = CREATED_AT, $includeThreadLevelAndParentId: Boolean = true, $skipTopicName: Boolean = false, $includeCurationState: Boolean = false, $includeSenderBadges: Boolean = false, $skipMessageParticipants: Boolean = false, $includeViewerHasBookmarked: Boolean = false, $includeThreadUpvoteInfo: Boolean = false, $includeOriginNetworkBadge: Boolean = false, $skipReactionMessageFields: Boolean = false, $includeAnnouncementNotificationTargetEntities: Boolean = false, $includeAnnouncementNotificationTargets: Boolean = false, $includeMessageContentSourceFile: Boolean = false, $includeSecondLevelBestReply: Boolean = false, $includeMyLeadersPinnedThreads: Boolean = false, $includeVerifiedReply: Boolean = false, $includeRecommendedTopLevelReplies: Boolean = false, $includeHiddenForNetworkInDiscovery: Boolean = false, $includeQuestionQueueState: Boolean = false, $includeGroupFeedLastVisitedAt: Boolean = false, $includeGroupFeedLastVisitedIds: Boolean = false, $includeViewerCanPrivateReply: Boolean = false, $includeViewerShouldSeeResharePrompt: Boolean = false, $skipTeamsMeetingTitle: Boolean = false, $requestContentInTargetLanguage: Boolean = false, $contentTargetLanguage: Locale = "unset-language") {
+  group: node(id: $groupId) {
+    ... on Group {
+      ...GroupFields
+      ...GroupFeedLastVisitedFields @include(if: $includeGroupFeedLastVisitedAt)
+      ...FeedGroupNestedThreads
+    }
+  }
+}
+
+fragment FeedGroupNestedThreads on Group {
+  feed {
+    threads(last: $threadCount, type: $groupFeedType, before: $olderThan, after: $newerThan, sortBy: $sortThreadsBy) {
+      ...FeedGroupNestedThreadList
+    }
+    pinnedThreads {
+      ...NestedThreadFieldsWithReplies
+    }
+    ...UnseenThreadIds
+  }
+}
+
+fragment FeedGroupNestedThreadList on GroupFeedThreadConnection {
+  realtimeChannelId
+  pageInfo {
+    ...PageInfoFields
+  }
+  edges {
+    cursor
+    sortKey
+    node {
+      ...NestedThreadFieldsWithReplies
+    }
+  }
+  telemetryContext {
+    ...TelemetryContextFields
+  }
+  sortedBy
+}
+
+fragment UnseenThreadIds on GroupFeed {
+  unseenThreads: groupUnseenCount(last: 40) {
+    hasMore
+    threads: unseenThreadsInfo {
+      id: threadId
+    }
+  }
+}
+
+fragment NestedThreadFieldsWithReplies on Thread {
+  topLevelReplies(last: $replyCount, sortBy: $sortRepliesBy) {
+    ...TopLevelReplyConnectionFields
+  }
+  bestReply {
+    ...BestReplyNestedFields
+  }
+  ...ThreadFields
+}
+
+fragment BestReplyNestedFields on BestReply {
+  secondLevelReplies(last: $bestReplySecondLevelRepliesCount) {
+    ...SecondLevelReplyConnectionFields
+  }
+  viewerHasSeen
+}
+
+fragment SecondLevelReplyPaginationFields on SecondLevelReplyConnection {
+  pageInfo {
+    ...PageInfoFields
+  }
+  extendedPageInfo {
+    ...ExtendedReplyPageInfoFields
+  }
+}
+
+fragment SecondLevelReplyConnectionFields on SecondLevelReplyConnection {
+  ...SecondLevelReplyPaginationFields
+  edges {
+    ...SecondLevelReplyEdgeFields
+  }
+}
+
+fragment SecondLevelReplyEdgeFields on SecondLevelReplyEdge {
+  cursor
+  node {
+    ...MessageFields
+  }
+  viewerHasSeen
+}
+
+fragment ExtendedReplyPageInfoFields on ReplyConnectionExtendedPageInfo {
+  totalPreviousCount
+  totalUnseenPreviousCount
+  totalNextCount
+  totalUnseenNextCount
+}
+
+fragment BaseMessageFields on Message {
+  id
+  viewerMutationId
+  telemetryId
+  thread {
+    id
+  }
+  sender {
+    ...MessageSenderFields
+  }
+  senderBadges @include(if: $includeSenderBadges)
+  content {
+    ...MessageContentFields
+  }
+  body @skip(if: $requestContentInTargetLanguage) {
+    ...MessageBodyFields
+  }
+  announcementAudience
+  announcementAudienceIds
+  announcementNotificationTargets @include(if: $includeAnnouncementNotificationTargets)
+  availableTranslations @include(if: $requestContentInTargetLanguage)
+  title @skip(if: $requestContentInTargetLanguage)
+  language @skip(if: $requestContentInTargetLanguage)
+  languageSpecificContent(targetLanguage: $contentTargetLanguage) @include(if: $requestContentInTargetLanguage) {
+    body {
+      ...MessageBodyFields
+    }
+    title
+    language
+  }
+  defaultLanguage: language
+  createdAt
+  updatedAt
+  version
+  isEdited
+  viewerCanEdit
+  isDraft
+  scheduledPublishAt
+  isDeleted
+  viewerCanDelete
+  viewerCanShare
+  viewerHasUpvoted
+  ...MessageParticipantsFields @skip(if: $skipMessageParticipants)
+  isQuestion
+  isArticle
+  sharedMessage {
+    ...SharedMessageFields
+  }
+  hasDeletedSharedMessage
+  threadLevel @include(if: $includeThreadLevelAndParentId)
+  parentMessage @include(if: $includeThreadLevelAndParentId) {
+    id
+  }
+}
+
+fragment SharedMessageFields on Message {
+  __typename
+  id
+  sender {
+    ...MessageSenderFields
+  }
+  content {
+    ...MessageContentFields
+  }
+  body {
+    ...MessageBodyFields
+  }
+  title
+  language
+  attachments {
+    totalCount
+  }
+  headerImage {
+    ...ImageFileFields
+  }
+  createdAt
+  thread {
+    id
+    group {
+      ...GroupLinkFields
+    }
+    threadStarter {
+      id
+    }
+    seenByCount
+    shares {
+      totalCount
+    }
+    ...ThreadScopeFields
+    isVisibleInNetworkQuestionFeeds
+  }
+  isQuestion
+  isArticle
+  threadLevel @include(if: $includeThreadLevelAndParentId)
+  parentMessage @include(if: $includeThreadLevelAndParentId) {
+    id
+  }
+}
+
+fragment MessageFields on Message {
+  ...BaseMessageFields
+  ...FeaturedReactionMessageFields @skip(if: $skipReactionMessageFields)
+  featuredQuestionReplyUpvotes(first: 10) {
+    totalCount
+    edges {
+      node {
+        ...UserFields
+      }
+    }
+  }
+  ...AnnouncementNotificationTargetEntitiesFields @include(if: $includeAnnouncementNotificationTargetEntities)
+  viewerMutationId
+  attachments(first: 1000) {
+    totalCount
+    edges {
+      ...MessageAttachmentEdgeFields
+    }
+  }
+}
+
+fragment GroupLinkFields on Group {
+  id
+  displayName
+  isOfficial
+  isMultiTenantOrganizationGroup
+  officeUnifiedGroupId
+  telemetryId
+}
+
+fragment ThreadScopeFields on Thread {
+  scope {
+    __typename
+    ...TeamsMeetingThreadScopeFields
+    ...UserMomentThreadScopeFields
+    ...UserWallThreadScopeFields
+  }
+}
+
+fragment UserMomentThreadScopeFields on ThreadScope {
+  ... on UserMomentScope {
+    owner {
+      ...UserFields
+    }
+  }
+}
+
+fragment UserFields on User {
+  databaseId
+  telemetryId
+  id
+  officeUserId
+  network {
+    ...NetworkFields
+  }
+  displayName
+  email
+  jobTitle
+  isGuest
+  ...UserOriginNetwork @include(if: $includeOriginNetworkBadge)
+  ...UserAvatarFields
+  ...UserCampaignSashFields
+}
+
+fragment UserOriginNetwork on User {
+  originNetworkBadgeDisplayName
+  originNetworkId
+}
+
+fragment UserAvatarFields on User {
+  avatarUrlTemplate
+  hasDefaultAvatar
+}
+
+fragment UserCampaignSashFields on User {
+  campaignSash {
+    campaign {
+      id
+      sashImageUrl
+    }
+  }
+}
+
+fragment NetworkFields on Network {
+  id
+  displayName
+  permalink
+}
+
+fragment UserWallThreadScopeFields on ThreadScope {
+  ... on UserWallScope {
+    owner {
+      ...UserFields
+    }
+  }
+}
+
+fragment TeamsMeetingThreadScopeFields on ThreadScope {
+  ... on TeamsMeetingScope {
+    teamsMeeting {
+      ...TeamsMeetingReferenceFields
+    }
+  }
+}
+
+fragment TeamsMeetingReferenceFields on TeamsMeeting {
+  id
+  title @skip(if: $skipTeamsMeetingTitle)
+}
+
+fragment AnnouncementNotificationTargetEntitiesFields on Message {
+  id
+  announcementNotificationTargetEntities(first: 100) {
+    ...AnnouncementNotificationTargetEntityFields
+  }
+}
+
+fragment AnnouncementNotificationTargetEntityFields on AnnouncementNotificationTargetConnection {
+  edges {
+    ...AnnouncementNotificationTargetEntityEdgeFields
+  }
+}
+
+fragment AnnouncementNotificationTargetEntityEdgeFields on AnnouncementNotificationTargetEdge {
+  node {
+    __typename
+    ...UserFields
+    ...OfficeGroupFields
+    ...AudienceFields
+    ...TargetingRuleFields
+  }
+}
+
+fragment TargetingRuleFields on TargetingRule {
+  targetingRuleId: id
+  targetingRuleDisplayName: displayName
+  expression {
+    ... on TargetingCompositeExpression {
+      expressions {
+        filterType
+        filterValues {
+          displayName
+          filterValueId
+          type
+        }
+        operator
+      }
+      operator
+    }
+  }
+}
+
+fragment OfficeGroupFields on OfficeGroup {
+  id
+  displayName
+  memberCount
+  type
+  officeGroupEmail: email
+}
+
+fragment AudienceFields on Audience {
+  id
+  displayName
+  isDefaultAudience
+  totalUserCount
+  officeId
+}
+
+fragment FeaturedReactionMessageConnectionFields on MessageReactionConnection {
+  edges {
+    node {
+      ...UserReactionFields
+    }
+  }
+}
+
+fragment FeaturedReactionMessageFields on Message {
+  reactionsConnection {
+    totalCount
+    ...reactionCounts
+  }
+  featuredReactions(first: 8) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  likeFeaturedReactions: featuredReactions(first: 8, filterByReaction: LIKE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  loveFeaturedReactions: featuredReactions(first: 8, filterByReaction: LOVE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  laughFeaturedReactions: featuredReactions(first: 8, filterByReaction: LAUGH) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  celebrateFeaturedReactions: featuredReactions(first: 8, filterByReaction: CELEBRATE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  thankFeaturedReactions: featuredReactions(first: 8, filterByReaction: THANK) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  sadFeaturedReactions: featuredReactions(first: 8, filterByReaction: SAD) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  agreeFeaturedReactions: featuredReactions(first: 8, filterByReaction: AGREE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  angryFeaturedReactions: featuredReactions(first: 8, filterByReaction: ANGRY) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  brainFeaturedReactions: featuredReactions(first: 8, filterByReaction: BRAIN) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  bullseyeFeaturedReactions: featuredReactions(first: 8, filterByReaction: BULLSEYE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  confirmedFeaturedReactions: featuredReactions(first: 8, filterByReaction: CONFIRMED) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  cryingFeaturedReactions: featuredReactions(first: 8, filterByReaction: CRYING) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  excitedFeaturedReactions: featuredReactions(first: 8, filterByReaction: EXCITED) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  goofyFeaturedReactions: featuredReactions(first: 8, filterByReaction: GOOFY) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  happyFeaturedReactions: featuredReactions(first: 8, filterByReaction: HAPPY) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  heartBrokenFeaturedReactions: featuredReactions(first: 8, filterByReaction: HEART_BROKEN) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  intenseLaughFeaturedReactions: featuredReactions(first: 8, filterByReaction: INTENSE_LAUGH) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  medalFeaturedReactions: featuredReactions(first: 8, filterByReaction: MEDAL) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  mindBlownFeaturedReactions: featuredReactions(first: 8, filterByReaction: MIND_BLOWN) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  praiseFeaturedReactions: featuredReactions(first: 8, filterByReaction: PRAISE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  scaredFeaturedReactions: featuredReactions(first: 8, filterByReaction: SCARED) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  shockedFeaturedReactions: featuredReactions(first: 8, filterByReaction: SHOCKED) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  sillyFeaturedReactions: featuredReactions(first: 8, filterByReaction: SILLY) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  smileFeaturedReactions: featuredReactions(first: 8, filterByReaction: SMILE) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  starStruckFeaturedReactions: featuredReactions(first: 8, filterByReaction: STAR_STRUCK) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  supportFeaturedReactions: featuredReactions(first: 8, filterByReaction: SUPPORT) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  surprisedFeaturedReactions: featuredReactions(first: 8, filterByReaction: SURPRISED) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  takingNotesFeaturedReactions: featuredReactions(first: 8, filterByReaction: TAKING_NOTES) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  thinkingFeaturedReactions: featuredReactions(first: 8, filterByReaction: THINKING) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  watchingFeaturedReactions: featuredReactions(first: 8, filterByReaction: WATCHING) {
+    ...FeaturedReactionMessageConnectionFields
+  }
+  viewerHasLiked
+  viewerReaction
+}
+
+fragment reactionCounts on MessageReactionConnection {
+  likeCount: count(reaction: LIKE)
+  loveCount: count(reaction: LOVE)
+  laughCount: count(reaction: LAUGH)
+  thankCount: count(reaction: THANK)
+  celebrateCount: count(reaction: CELEBRATE)
+  sadCount: count(reaction: SAD)
+  agreeCount: count(reaction: AGREE)
+  angryCount: count(reaction: ANGRY)
+  brainCount: count(reaction: BRAIN)
+  bullseyeCount: count(reaction: BULLSEYE)
+  confirmedCount: count(reaction: CONFIRMED)
+  cryingCount: count(reaction: CRYING)
+  excitedCount: count(reaction: EXCITED)
+  goofyCount: count(reaction: GOOFY)
+  happyCount: count(reaction: HAPPY)
+  heartBrokenCount: count(reaction: HEART_BROKEN)
+  intenseLaughCount: count(reaction: INTENSE_LAUGH)
+  medalCount: count(reaction: MEDAL)
+  mindBlownCount: count(reaction: MIND_BLOWN)
+  praiseCount: count(reaction: PRAISE)
+  scaredCount: count(reaction: SCARED)
+  shockedCount: count(reaction: SHOCKED)
+  sillyCount: count(reaction: SILLY)
+  smileCount: count(reaction: SMILE)
+  starStruckCount: count(reaction: STAR_STRUCK)
+  supportCount: count(reaction: SUPPORT)
+  surprisedCount: count(reaction: SURPRISED)
+  takingNotesCount: count(reaction: TAKING_NOTES)
+  thinkingCount: count(reaction: THINKING)
+  watchingCount: count(reaction: WATCHING)
+}
+
+fragment UserReactionFields on User {
+  ...UserFields
+  reactionAccentColor
+}
+
+fragment MessageAttachmentEdgeFields on MessageAttachmentEdge {
+  node {
+    __typename
+    ...FileFields
+    ...ImageFileFields
+    ...VideoFileFields
+    ...WebLinkFields
+    ...WebImageFields
+    ...WebVideoFields
+    ...SharePointFileLinkFields
+    ...SharePointVideoLinkFields
+    ...SharePointWebLinkFields
+  }
+}
+
+fragment SharePointWebLinkFields on SharePointWebLink {
+  __typename
+  id
+  url
+  title
+  description
+  linkType
+  mediumAuthenticatedPreviewImage
+  smallAuthenticatedPreviewImage
+}
+
+fragment SharePointVideoLinkFields on SharePointVideoLink {
+  __typename
+  id
+  url
+  title
+  mimeType
+  description
+  previewImage
+  streamUrlProvider
+  embeddablePreviewUrl
+  videoHeight
+  videoWidth
+}
+
+fragment SharePointFileLinkFields on SharePointFileLink {
+  __typename
+  id
+  url
+  embeddablePreviewUrl
+  title
+  mimeType
+  displayName
+  description
+  previewImage
+}
+
+fragment FileFields on File {
+  __typename
+  id
+  displayName
+  fileDescription: description
+  fullPageEditorUrl
+  mimeType
+  downloadLink
+  previewImage
+  embeddablePreviewUrl
+  databaseId
+  state
+  group {
+    ...GroupFields
+  }
+}
+
+fragment ImageFileFields on ImageFile {
+  __typename
+  id
+  displayName
+  fileDescription: description
+  downloadLink
+  width
+  height
+  smallImage
+  mediumImage
+  largeImage
+  databaseId
+  state
+  storageProvider
+}
+
+fragment VideoFileFields on VideoFile {
+  __typename
+  id
+  displayName
+  fileDescription: description
+  downloadLink
+  previewImage
+  databaseId
+  state
+  width
+  height
+  group {
+    ...GroupFields
+  }
+  azureVideoSource {
+    streamUrlProvider
+    transcodingStatus
+  }
+  sharePointVideoSource {
+    embeddablePreviewUrl
+    streamUrlProvider
+  }
+}
+
+fragment GroupFields on Group {
+  databaseId
+  telemetryId
+  id
+  officeUnifiedGroupId
+  network {
+    id
+  }
+  ...GroupAvatarFields
+  displayName
+  description
+  isExternal
+  isOfficial
+  guestsCount
+  threadStarterSmallFileUploadUrl
+  isMultiTenantOrganizationGroup
+  isMoveThreadToThisGroupRestricted
+}
+
+fragment GroupAvatarFields on Group {
+  avatarUrlTemplate
+  hasDefaultAvatar
+}
+
+fragment WebVideoFields on WebVideo {
+  __typename
+  id
+  url
+  title
+  description
+  previewImage
+  embedUrl
+  provider
+}
+
+fragment WebLinkFields on WebLink {
+  __typename
+  id
+  url
+  title
+  description
+  previewImage
+}
+
+fragment WebImageFields on WebImage {
+  __typename
+  id
+  url
+  title
+  description
+  previewImage
+  nonAnimatedImageUrl
+}
+
+fragment MessageParticipantsFields on Message {
+  id
+  messageParticipants: participants(first: 100) {
+    ...MessageParticipantList
+  }
+}
+
+fragment MessageParticipantList on MessageParticipantConnection {
+  totalCount
+  pageInfo {
+    ...PageInfoFields
+  }
+  edges {
+    isTagged
+    isNotified
+    node {
+      ...UserFields
+    }
+  }
+}
+
+fragment PageInfoFields on PageInfo {
+  hasPreviousPage
+  startCursor
+  hasNextPage
+  endCursor
+}
+
+fragment MessageBodyFields on MessageBody {
+  serializedContentState
+  references {
+    __typename
+    ... on User {
+      ...UserFields
+    }
+    ... on Group {
+      ...GroupFields
+    }
+    ... on Campaign {
+      ...CampaignReferenceFields
+    }
+  }
+}
+
+fragment CampaignReferenceFields on Campaign {
+  id
+  telemetryId
+  hashTags
+  color
+  state
+  isOfficial
+  description
+  scope {
+    ...CampaignScopeFields
+  }
+}
+
+fragment CampaignScopeFields on CampaignScope {
+  __typename
+  ...CampaignGroupScopeFields
+  ...CampaignNetworkScopeFields
+  ...CampaignMultiTenantOrganizationScopeFields
+}
+
+fragment CampaignMultiTenantOrganizationScopeFields on CampaignScope {
+  ... on CampaignMultiTenantOrganizationScope {
+    isMultiTenantOrganizationScopedCampaign
+  }
+}
+
+fragment CampaignNetworkScopeFields on CampaignScope {
+  ... on CampaignNetworkScope {
+    isNetworkScopedCampaign
+  }
+}
+
+fragment CampaignGroupScopeFields on CampaignScope {
+  ... on CampaignGroupScope {
+    group {
+      ...CampaignGroupReferenceFields
+    }
+  }
+}
+
+fragment CampaignGroupReferenceFields on Group {
+  id
+}
+
+fragment MessageContentFields on MessageContent {
+  __typename
+  ...AnnouncementMessageContentFields
+  ...PollMessageContentFields
+  ...PraiseMessageContentFields
+  ...AddedParticipantSystemMessageContentFields
+  ...CreatedGroupSystemMessageContentFields
+  ...MovedGroupThreadToGroupSystemMessageContentFields
+  ...RemovedParticipantSystemMessageContentFields
+  ...MovedDirectMessageToGroupSystemMessageContentFields
+  ...JoinedNetworkSystemMessageContentFields
+  ...DisabledForeignNetworksSystemMessageContentFields
+  ...RemovedForeignNetworkSystemMessageContentFields
+  ...ClosedPollVotingSystemMessageContentFields
+  ...ReopenedPollVotingSystemMessageContentFields
+  ...CreatedNetworkSystemMessageContentFields
+  ...MarkedMessageAsQuestionSystemMessageContentFields
+  ...UnmarkedMessageAsQuestionSystemMessageContentFields
+}
+
+fragment PraiseMessageContentFields on PraiseMessageContent {
+  __typename
+  badge
+  users {
+    ...UserFields
+  }
+}
+
+fragment PollMessageContentFields on PollMessageContent {
+  __typename
+  options {
+    ...PollOptionFields
+  }
+  isPollClosed
+  viewerCanClosePoll
+}
+
+fragment PollOptionFields on PollOption {
+  displayName
+  index
+  viewerHasSelected
+  voteCount
+}
+
+fragment AddedParticipantSystemMessageContentFields on AddedParticipantSystemMessageContent {
+  __typename
+  users {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment CreatedGroupSystemMessageContentFields on CreatedGroupSystemMessageContent {
+  __typename
+  group {
+    __typename
+    ...GroupFields
+  }
+}
+
+fragment MovedGroupThreadToGroupSystemMessageContentFields on MovedGroupThreadToGroupSystemMessageContent {
+  __typename
+  moveSourceGroupAccess {
+    __typename
+    viewerHasAccess
+    group {
+      __typename
+      ...GroupFields
+    }
+  }
+  moveDestinationGroupAccess {
+    __typename
+    viewerHasAccess
+    group {
+      __typename
+      ...GroupFields
+    }
+  }
+}
+
+fragment RemovedParticipantSystemMessageContentFields on RemovedParticipantSystemMessageContent {
+  __typename
+  users {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment MovedDirectMessageToGroupSystemMessageContentFields on MovedDirectMessageToGroupSystemMessageContent {
+  __typename
+  group {
+    __typename
+    ...GroupFields
+  }
+}
+
+fragment JoinedNetworkSystemMessageContentFields on JoinedNetworkSystemMessageContent {
+  __typename
+  network {
+    __typename
+    ...NetworkFields
+  }
+  user {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment DisabledForeignNetworksSystemMessageContentFields on DisabledForeignNetworksSystemMessageContent {
+  __typename
+  network {
+    __typename
+    ...NetworkFields
+  }
+}
+
+fragment RemovedForeignNetworkSystemMessageContentFields on RemovedForeignNetworkSystemMessageContent {
+  __typename
+  network {
+    __typename
+    ...NetworkFields
+  }
+}
+
+fragment ClosedPollVotingSystemMessageContentFields on ClosedPollVotingSystemMessageContent {
+  __typename
+  user {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment ReopenedPollVotingSystemMessageContentFields on ReopenedPollVotingSystemMessageContent {
+  __typename
+  user {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment CreatedNetworkSystemMessageContentFields on CreatedNetworkSystemMessageContent {
+  __typename
+  network {
+    __typename
+    ...NetworkFields
+  }
+}
+
+fragment MarkedMessageAsQuestionSystemMessageContentFields on MarkedMessageAsQuestionSystemMessageContent {
+  __typename
+  user {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment UnmarkedMessageAsQuestionSystemMessageContentFields on UnmarkedMessageAsQuestionSystemMessageContent {
+  __typename
+  user {
+    __typename
+    ...UserFields
+  }
+}
+
+fragment AnnouncementMessageContentFields on AnnouncementMessageContent {
+  __typename
+  title
+}
+
+fragment MessageSenderFields on MessageSender {
+  __typename
+  ... on User {
+    ...UserFields
+  }
+  ... on Bot {
+    ...BotFields
+  }
+  ... on AnonymousUser {
+    ...AnonymousUserFields
+  }
+  ... on ModeratorUser {
+    ...ModeratorUserFields
+  }
+  ... on GroupAgent {
+    id
+    group {
+      id
+      displayName
+    }
+  }
+}
+
+fragment ModeratorUserFields on ModeratorUser {
+  id
+  sender {
+    ...UserFields
+  }
+}
+
+fragment AnonymousUserFields on AnonymousUser {
+  id
+}
+
+fragment BotFields on Bot {
+  id
+  displayName
+  avatarUrlTemplate
+}
+
+fragment TopLevelReplyPaginationFields on TopLevelReplyConnection {
+  pageInfo {
+    ...PageInfoFields
+  }
+  extendedPageInfo {
+    ...ExtendedReplyPageInfoFields
+  }
+  sortedBy
+  totalCount
+}
+
+fragment TopLevelReplyEdgeCommonFields on TopLevelReplyEdge {
+  cursor
+  node {
+    ...MessageFields
+  }
+  viewerHasSeen
+}
+
+fragment ThreadFields on Thread {
+  id
+  databaseId
+  telemetryId
+  realtimeChannelId
+  messageReactionsRealtimeChannelId
+  network {
+    id
+  }
+  group {
+    ...GroupFields
+  }
+  hasAttachments
+  hiddenForNetworkInDiscovery @include(if: $includeHiddenForNetworkInDiscovery)
+  shares(first: 1) @skip(if: $skipShareCount) {
+    totalCount
+  }
+  viewerHasUnreadMessages
+  bestReply {
+    ...BestReplyFields
+  }
+  secondLevelBestReply @include(if: $includeSecondLevelBestReply) {
+    ...SecondLevelBestReplyFields
+  }
+  recommendedTopLevelReplies(count: 2) @include(if: $includeRecommendedTopLevelReplies) {
+    ...RecommendedTopLevelReplyFields
+  }
+  verifiedReply @include(if: $includeVerifiedReply) {
+    ...VerifiedReplyFields
+  }
+  viewerCanAddOrRemoveTopic
+  viewerCanBookmark
+  viewerCanClose
+  viewerCanDelete
+  viewerCanHideForNetworkInDiscovery @include(if: $includeHiddenForNetworkInDiscovery)
+  viewerCanMarkBestReply
+  viewerCanMarkVerifiedReply @include(if: $includeVerifiedReply)
+  viewerCanPin
+  viewerCanPinInMyLeaders @include(if: $includeMyLeadersPinnedThreads)
+  viewerCanPromote
+  viewerCanMarkAsQuestion
+  viewerCanMove
+  viewerCanReply
+  viewerCanPrivateReply @include(if: $includeViewerCanPrivateReply)
+  viewerCanAccessThreadActivity
+  viewerIsFollowing @skip(if: $skipViewerIsFollowing)
+  viewerHasSeenThreadStarter
+  viewerHasBookmarked @include(if: $includeViewerHasBookmarked)
+  viewerHasUpvoted @include(if: $includeThreadUpvoteInfo)
+  viewerLastSeenMessage @skip(if: $skipViewerLastSeenMessage) {
+    id
+  }
+  viewerMutationId
+  threadStarter {
+    ...MessageWithModerationStateFields
+    headerImage {
+      ...ImageFileFields
+    }
+    messageContentSourceFile @include(if: $includeMessageContentSourceFile) {
+      ...FileFields
+    }
+  }
+  replySmallFileUploadUrl
+  participants(first: 100) {
+    ...ThreadParticipantList
+  }
+  updatedAt
+  upvoteCount @include(if: $includeThreadUpvoteInfo)
+  topics(first: 100) {
+    ...ThreadTopicList
+  }
+  seenByCount @skip(if: $skipSeenByCount)
+  isAnnouncement
+  isClosed
+  isDirectMessage
+  isForcedNotification
+  broadcast @skip(if: $skipBroadcasts) {
+    ...BroadcastFields
+  }
+  promotionEndTime
+  markSeenKey
+  wallOwner {
+    ...UserFields
+  }
+  ...ThreadScopeFields
+  isVisibleInNetworkQuestionFeeds
+  ...ThreadQuestionQueueState @include(if: $includeQuestionQueueState)
+  viewerShouldSeeResharePrompt @include(if: $includeViewerShouldSeeResharePrompt)
+}
+
+fragment ThreadQuestionQueueState on Thread {
+  isQueued
+  answerState
+}
+
+fragment VerifiedReplyFields on VerifiedReply {
+  message {
+    ...MessageFields
+  }
+  markedBy {
+    ...UserFields
+  }
+  markedAt
+}
+
+fragment RecommendedTopLevelReplyFields on RecommendedTopLevelReplyConnection {
+  edges {
+    node {
+      ...MessageFields
+    }
+    secondLevelReplies(last: 1) {
+      pageInfo {
+        ...PageInfoFields
+      }
+      extendedPageInfo {
+        ...ExtendedReplyPageInfoFields
+      }
+      ...SecondLevelReplyConnectionFields
+    }
+    viewerHasSeen
+  }
+}
+
+fragment SecondLevelBestReplyFields on SecondLevelBestReply {
+  message {
+    ...MessageFields
+  }
+  markedBy {
+    ...UserFields
+  }
+}
+
+fragment BestReplyFields on BestReply {
+  message {
+    ...MessageFields
+  }
+  markedBy {
+    ...UserFields
+  }
+}
+
+fragment BroadcastFields on Broadcast {
+  id
+  broadcastEventType
+  organizer {
+    ...UserFields
+  }
+  network {
+    id
+  }
+  title
+  description
+  isDiscoverable
+  startAt
+  endAt
+  isEmbeddable
+  isPublished
+  isThreadStarterRestricted
+  isThreadStarterAdminModerated
+  isReplyToConversationEnabled
+  viewerCanStartThread
+  presenters {
+    ...UserFields
+  }
+  producers {
+    ...UserFields
+  }
+  editLink
+  metricsLink
+  productionEmbedUrl
+  isGroupCalendarInviteSent
+  realtimeChannelId
+  createdAt
+  calendarDownloadUrl
+  teamsJoinLink
+  teamsLiveEventType
+  teamsVideoEmbedUrl
+  recordingUrl
+  optionsLink
+  ingest {
+    ...BroadcastIngestFields
+  }
+  rtmpSettings {
+    ...BroadcastRtmpSettingsFields
+  }
+  ...BroadcastStatusFields
+}
+
+fragment BroadcastIngestFields on Ingest {
+  urls {
+    ...BroadcastIngestUrlFields
+  }
+}
+
+fragment BroadcastIngestUrlFields on IngestUrl {
+  url
+  protocol
+  type
+}
+
+fragment BroadcastRtmpSettingsFields on BroadcastRtmpSettings {
+  isSslEnabled
+  rtmpIngestUrl
+  rtmpKey
+  rtmpsIngestUrl
+}
+
+fragment BroadcastStatusFields on Broadcast {
+  broadcastId
+  group {
+    ...GroupFields
+    ...GroupCoverImageFields
+  }
+  status
+  isCancelled
+}
+
+fragment GroupCoverImageFields on Group {
+  coverImageUrlTemplate
+  hasDefaultCoverImage
+  defaultCoverImageUrlTemplate
+}
+
+fragment ThreadTopicList on ThreadTopicConnection {
+  edges {
+    node {
+      ...TopicFields
+    }
+  }
+}
+
+fragment TopicFields on Topic {
+  id
+  displayName @skip(if: $skipTopicName)
+  curationState @include(if: $includeCurationState)
+  databaseId
+  officeTopicId
+  telemetryId
+}
+
+fragment ThreadParticipantList on ThreadParticipantConnection {
+  pageInfo {
+    ...PageInfoFields
+  }
+  edges {
+    node {
+      ...UserFields
+    }
+  }
+  totalCount
+}
+
+fragment MessageWithModerationStateFields on Message {
+  ...MessageFields
+  moderationState @include(if: $includeModerationState)
+}
+
+fragment TopLevelReplyConnectionFields on TopLevelReplyConnection {
+  ...TopLevelReplyPaginationFields
+  edges {
+    ...TopLevelReplyEdgeFields
+  }
+}
+
+fragment TopLevelReplyEdgeFields on TopLevelReplyEdge {
+  ...TopLevelReplyEdgeCommonFields
+  secondLevelReplies(last: $secondLevelRepliesCount) {
+    ...SecondLevelReplyConnectionFields
+  }
+}
+
+fragment TelemetryContextFields on FeedThreadTelemetryContext {
+  type
+  subtype
+  telemetryId
+}
+
+fragment GroupFeedLastVisitedFields on Group {
+  id
+  viewerLastVisitedAt
+  viewerLastVisitMessage @include(if: $includeGroupFeedLastVisitedIds) {
+    lastVisitMessageId: id
+    thread {
+      lastVisitThreadId: id
+    }
+  }
+  lastMessageAt
+  lastMessage @include(if: $includeGroupFeedLastVisitedIds) {
+    lastMessageId: id
+    thread {
+      lastThreadId: id
+    }
+  }
+}
+
+Query Variables
+
+{
+    "threadCount": 4,
+    "replyCount": 2,
+    "sortRepliesBy": "UPVOTE_RANK_THEN_CREATED_AT",
+    "sortThreadsBy": "CREATED_AT",
+    "groupId": "eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIzMzYxMTc3NyJ9",
+    "groupFeedType": "ALL",
+    "skipTopicName": true,
+    "includeSenderBadges": true,
+    "includeHiddenForNetworkInDiscovery": true,
+    "includeViewerHasBookmarked": false,
+    "includeOriginNetworkBadge": true,
+    "includeSecondLevelBestReply": false,
+    "includeGroupFeedLastVisitedAt": false,
+    "includeGroupFeedLastVisitedIds": false,
+    "includeVerifiedReply": true,
+    "includeMessageContentSourceFile": true,
+    "includeViewerShouldSeeResharePrompt": false
+}
+
