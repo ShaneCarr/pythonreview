@@ -86,3 +86,5 @@ dmypy.json
 *.swp
 *.tmp
 
+.venv/
+Benchmarks/token.json
