@@ -1,0 +1,834 @@
+{
+    "data": {
+        "group": {
+            "databaseId": "5914746880",
+            "telemetryId": "5914746880",
+            "id": "eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1OTE0NzQ2ODgwIn0",
+            "officeUnifiedGroupId": "afdad193-fba7-4dfa-960d-dca5be8b5adf",
+            "network": {
+                "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9"
+            },
+            "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/7TqmFtBc3g4DDqKJQQ-z-MrwhRrQ6rpX?P1=1752972949&P2=104&P3=1&P4=ThJR5bcsoLRR-ZEFayRJQgyDtJ5TG_u5IDaj8LOP7nSPF8_xMWIC8th4JHITwAB1hdKumbZoQ0ApLtMSNJMWcJ-K1VCrQhTay6qmyLS6kMlG8EO9eqY8jtvFaaZGQg34Z8gpmZFozkt2W3FrnwRLxTKJ1v5bA96G4Bnev4WiCHiUONPSIMEW__VTwe4KzyzgmoD2geZ7lCJ46JRHTwUT6SozDM8dCRibtjWxig4SCbh5c5z0ly9prYCkdIyfNTxbUfjeeQDhRMmiBxWL2RKzqjTtuHdDyzOxMbsmSVUFUWsGXjmAJ4z-_0cNaNXmFQbTZIfjTTFnQavLV4YmdhcALg==&size={width}x{height}",
+            "hasDefaultAvatar": false,
+            "displayName": "\uD83D\uDC18Yammer Data Access Patterns",
+            "description": "Working group to improve data access patterns across Yammer.",
+            "isExternal": false,
+            "isOfficial": false,
+            "guestsCount": 0,
+            "threadStarterSmallFileUploadUrl": "https://filesng.yammer.com/v4/uploadSmallFile/network/107/group/5914746880?thirdpartycookiefix=true&no_temp_auth=true&one_player_enabled=true",
+            "isMultiTenantOrganizationGroup": false,
+            "isMoveThreadToThisGroupRestricted": false,
+            "feed": {
+                "threads": {
+                    "realtimeChannelId": "NToxMDc6NTkxNDc0Njg4MA",
+                    "pageInfo": {
+                        "hasPreviousPage": true,
+                        "startCursor": "eyJ0aHJlYWRfaWQiOjI5NjQ0NDg4OTQyNzE0ODgsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFJNzRSOEtFSiIsInRocmVhZF9zb3J0IjoicmVjZW5jeSIsIm1lc3NhZ2Vfc29ydCI6InVwdm90ZV9yYW5rX3RoZW5fY3JlYXRlZF9hdCJ9",
+                        "hasNextPage": false,
+                        "endCursor": "eyJ0aHJlYWRfaWQiOjI5NjQ0NDg4OTQyNzE0ODgsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFJNzRSOEtFSiIsInRocmVhZF9zb3J0IjoicmVjZW5jeSIsIm1lc3NhZ2Vfc29ydCI6InVwdm90ZV9yYW5rX3RoZW5fY3JlYXRlZF9hdCJ9"
+                    },
+                    "edges": [
+                        {
+                            "cursor": "eyJ0aHJlYWRfaWQiOjI5NjQ0NDg4OTQyNzE0ODgsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFJNzRSOEtFSiIsInRocmVhZF9zb3J0IjoicmVjZW5jeSIsIm1lc3NhZ2Vfc29ydCI6InVwdm90ZV9yYW5rX3RoZW5fY3JlYXRlZF9hdCJ9",
+                            "sortKey": "00000001I74R8KEJ",
+                            "node": {
+                                "topLevelReplies": {
+                                    "pageInfo": {
+                                        "hasPreviousPage": false,
+                                        "startCursor": null,
+                                        "hasNextPage": false,
+                                        "endCursor": null
+                                    },
+                                    "extendedPageInfo": {
+                                        "totalPreviousCount": 0,
+                                        "totalUnseenPreviousCount": 0,
+                                        "totalNextCount": 0,
+                                        "totalUnseenNextCount": 0
+                                    },
+                                    "sortedBy": "CREATED_AT",
+                                    "totalCount": 0,
+                                    "edges": []
+                                },
+                                "bestReply": null,
+                                "verifiedReply": null,
+                                "id": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMjk2NDQ0ODg5NDI3MTQ4OCJ9",
+                                "databaseId": "2964448894271488",
+                                "telemetryId": "2964448894271488",
+                                "realtimeChannelId": "MTM6MTA3OjI5NjQ0NDg4OTQyNzE0ODg",
+                                "messageReactionsRealtimeChannelId": "/threads/2964448894271488/reactions",
+                                "network": {
+                                    "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9"
+                                },
+                                "group": {
+                                    "databaseId": "5914746880",
+                                    "telemetryId": "5914746880",
+                                    "id": "eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1OTE0NzQ2ODgwIn0",
+                                    "officeUnifiedGroupId": "afdad193-fba7-4dfa-960d-dca5be8b5adf",
+                                    "network": {
+                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9"
+                                    },
+                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/7TqmFtBc3g4DDqKJQQ-z-MrwhRrQ6rpX?P1=1752972949&P2=104&P3=1&P4=ThJR5bcsoLRR-ZEFayRJQgyDtJ5TG_u5IDaj8LOP7nSPF8_xMWIC8th4JHITwAB1hdKumbZoQ0ApLtMSNJMWcJ-K1VCrQhTay6qmyLS6kMlG8EO9eqY8jtvFaaZGQg34Z8gpmZFozkt2W3FrnwRLxTKJ1v5bA96G4Bnev4WiCHiUONPSIMEW__VTwe4KzyzgmoD2geZ7lCJ46JRHTwUT6SozDM8dCRibtjWxig4SCbh5c5z0ly9prYCkdIyfNTxbUfjeeQDhRMmiBxWL2RKzqjTtuHdDyzOxMbsmSVUFUWsGXjmAJ4z-_0cNaNXmFQbTZIfjTTFnQavLV4YmdhcALg==&size={width}x{height}",
+                                    "hasDefaultAvatar": false,
+                                    "displayName": "\uD83D\uDC18Yammer Data Access Patterns",
+                                    "description": "Working group to improve data access patterns across Yammer.",
+                                    "isExternal": false,
+                                    "isOfficial": false,
+                                    "guestsCount": 0,
+                                    "threadStarterSmallFileUploadUrl": "https://filesng.yammer.com/v4/uploadSmallFile/network/107/group/5914746880?thirdpartycookiefix=true&no_temp_auth=true&one_player_enabled=true",
+                                    "isMultiTenantOrganizationGroup": false,
+                                    "isMoveThreadToThisGroupRestricted": false
+                                },
+                                "hasAttachments": false,
+                                "hiddenForNetworkInDiscovery": "NOT_RETRIEVED",
+                                "shares": {
+                                    "totalCount": 0
+                                },
+                                "viewerHasUnreadMessages": false,
+                                "viewerCanAddOrRemoveTopic": true,
+                                "viewerCanBookmark": true,
+                                "viewerCanClose": false,
+                                "viewerCanDelete": false,
+                                "viewerCanHideForNetworkInDiscovery": false,
+                                "viewerCanMarkBestReply": false,
+                                "viewerCanMarkVerifiedReply": false,
+                                "viewerCanPin": false,
+                                "viewerCanPromote": true,
+                                "viewerCanMarkAsQuestion": false,
+                                "viewerCanMove": true,
+                                "viewerCanReply": true,
+                                "viewerCanAccessThreadActivity": false,
+                                "viewerIsFollowing": false,
+                                "viewerHasSeenThreadStarter": true,
+                                "viewerHasBookmarked": false,
+                                "viewerLastSeenMessage": {
+                                    "id": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjMzNzkwMjc0MzU4NDc2ODAifQ"
+                                },
+                                "viewerMutationId": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMjk2NDQ0ODg5NDI3MTQ4OCJ9",
+                                "threadStarter": {
+                                    "id": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjI5NjQ0NDg4OTQyNzE0ODgifQ",
+                                    "viewerMutationId": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjI5NjQ0NDg4OTQyNzE0ODgifQ",
+                                    "telemetryId": "2964448894271488",
+                                    "thread": {
+                                        "id": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMjk2NDQ0ODg5NDI3MTQ4OCJ9"
+                                    },
+                                    "sender": {
+                                        "__typename": "User",
+                                        "databaseId": "1489376196",
+                                        "telemetryId": "1489376196",
+                                        "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODkzNzYxOTYifQ",
+                                        "officeUserId": "95071b34-69bf-4c7d-bf02-98430299a6d6",
+                                        "network": {
+                                            "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                            "displayName": "Microsoft",
+                                            "permalink": "microsoft.com"
+                                        },
+                                        "displayName": "Bertille Fernandes",
+                                        "email": "bferns@microsoft.com",
+                                        "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                        "isGuest": false,
+                                        "originNetworkBadgeDisplayName": null,
+                                        "originNetworkId": null,
+                                        "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/TFvskFhLv4fZtsjmrw9zz-DJJzwvFrMj_4460ab6f-f1f2-49e0-a310-88ebe0ed321b?P1=1752973420&P2=104&P3=1&P4=fkjY6bt9kmb0yLSHn8petH1tJvXjk6k_1b34ta4RzMulxJCRM83RKZbiOlewynmY1b6c9Lg_SZJu6zUmFzYOc2Jljtr2CYa92-1d5wsaK938al3wwAWBCf2FpD-2XnXx9qGL-diwC2lMk9oqGWnyLdAg-cl_ODzLyBaTXAbupdiRcwb5FQdNKIWugdhgIoJmAR8XHw-akV_FqxtkMs2jYgDkOiszYPJU_L9GE5bgEWM_T7KEKZkCUqFWKbUyCLffVAzL7YSu2kHVvnRhxlUu1J3VkZcnScuHkP9n4snxeHhKz3d3rarIpV6zV3XQ7j3EqWBgyrzPJnNlWKkob41CGQ==&size={width}x{height}",
+                                        "hasDefaultAvatar": false,
+                                        "campaignSash": null
+                                    },
+                                    "senderBadges": [],
+                                    "content": {
+                                        "__typename": "NormalMessageContent"
+                                    },
+                                    "announcementAudience": null,
+                                    "announcementAudienceIds": [],
+                                    "availableTranslations": [],
+                                    "languageSpecificContent": {
+                                        "body": {
+                                            "serializedContentState": "{\"blocks\":[{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"3jrmk\",\"text\":\"Hello v-team,\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[{\"key\":0,\"length\":14,\"offset\":6},{\"key\":2,\"length\":8,\"offset\":26}],\"inlineStyleRanges\":[],\"key\":\"d5fbl\",\"text\":\"I saw Prashant Bhide YRFC document. It has some wonderful suggestions for Postgres.\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"84l4q\",\"text\":\"\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"3j7cf\",\"text\":\"I was wondering if this v-team has any updated guidance for all kinds of DBs including cosmosDB. The ToDos and NotToDos. Any basic principals to follow and situations/configurations to avoid. \",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"d27rm\",\"text\":\"How to prevent overloading, how to decide on indexes(too many and writes get slow, too few and reads get slow), how to keep latency down, etc\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"ajk89\",\"text\":\"\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"2r6kd\",\"text\":\"If you have such a document, could you please share a link. If you dont, I would love to join this v-team to create such guiding principals for DBs for the org.\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"d8lr3\",\"text\":\"\",\"type\":\"unstyled\"},{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"fr9ou\",\"text\":\"Thank you.\",\"type\":\"unstyled\"}],\"entityMap\":{\"0\":{\"data\":{\"id\":\"eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc3ODA5MjkifQ\",\"entityText\":\"Prashant Bhide\"},\"mutability\":\"IMMUTABLE\",\"type\":\"USER\"},\"2\":{\"data\":{\"url\":\"https://microsoft.sharepoint.com/teams/YammerEngineering/Engineering%20Documents/Limit%20background%20task%20impact%20on%20user%20requests.docx?d=webb74469b75b4b549b07ae6ee756ceb9\"},\"mutability\":\"MUTABLE\",\"type\":\"LINK\"}}}",
+                                            "references": [
+                                                {
+                                                    "__typename": "User",
+                                                    "databaseId": "1494344941",
+                                                    "telemetryId": "1494344941",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0OTQzNDQ5NDEifQ",
+                                                    "officeUserId": "f28cce1c-f7da-4850-a989-9afd920ae9c6",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "David Waller",
+                                                    "email": "dwaller@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/MJxFRNMSC7KwcMmzxwQ8nrb8VWqVlJ6J_3f589c22-273f-4b07-8f5c-f498eeac99f7?P1=1752973170&P2=104&P3=1&P4=KEQRRUevXNl71u9cbcZ0_qWjc9q_LRXOYezm1LIpfJNHy98YY2gPvkEkTN9ufFUJOrQFyz1VuuDYC_YjTZpwDlQRNDYhgJkQJJ4o93w4XoxvIngd3uNRjDxDKRq23yD-tAE8FIQ-LI94nIGVaSjjrFp7ZqnZShALRox4xMpLlxB6_A6rUhDEMZ01jIIsUKOWjYoz0voNo8ZAfMpBtFSQV_08P_3blnLYxXBuDZZWjhsJ5OxekNH5pEpsowL-IBA8cik8qF6r3x2zwlFA1GXgb4yab8ZiiI_xIsz0whNx7vJ-iz5cxr11JsFm-V-aCrOQUVa1qQyX5I1Grv30UCFpJw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                },
+                                                {
+                                                    "__typename": "User",
+                                                    "databaseId": "1626525548",
+                                                    "telemetryId": "1626525548",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2MjY1MjU1NDgifQ",
+                                                    "officeUserId": "faddf3e2-3c78-41fd-81a3-52c325be6ade",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Guhao Wu",
+                                                    "email": "guhao.wu@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/JbRSTfjb5KC0x1vh26VHD6mnvn-JmqBx_0d6203bf-3c90-4d9e-91c8-1e9e6c5a9aa4?P1=1752973085&P2=104&P3=1&P4=tCfh95a-FE-eS5F9NAW58QGYcdCpg5USsqEIdtHrgL2F_6A7uIuupvuSgW7krLcNy6BBTPMSg4eBVk1zaa67CQoEal-ICqkquw6fSTtvmQtOVtiTimTj7kpQw3TGiOMq_k-4GpYBzpYctmB8C16LFJebjcv6v6MGmFKG0Oh1xjbvN5Lfs2KrUrnLp1Rt3MB_cE3sv3rgr0ta-tO3Er7iXBczEh3gvHuZHxpzyJW8I5C-Aup2RdIYprkeKwZznRzzOhajRvrIV8yVtiIq6Oxt7m79qw3YOdbNn5NNL0t4XUW-foUiExajhqZ8TT0Pbr4PhdWNf9OVgiKYI81Ijnc4Yw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                },
+                                                {
+                                                    "__typename": "User",
+                                                    "databaseId": "1489858274",
+                                                    "telemetryId": "1489858274",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODk4NTgyNzQifQ",
+                                                    "officeUserId": "816dec1c-08c5-4e39-abb8-951e355bf9c6",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Clark Breyman",
+                                                    "email": "clark.breyman@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/mwwb5rRP6rPDxMrPLW3VxVv3lQ8l6bZS_7558702b-ce22-4a7b-b207-d2cc5b72c00f?P1=1752973131&P2=104&P3=1&P4=aI3E0275Je2spbkKxR7buXSh4oqSryFYwgB4vQlM9cWGD5M1bVeeR9ZF7mguxJOwlcIZDsUNtfAiBV3tt0ugV9KU9e_iS2f3PO-YlwNoftnWSYLLuqLkz4TPgV5lLLY2RxbW9pek80NBazt98PBgs2sO_u_MtJWGoJWWb8BOM5VKVNfmbpTV0ZLY2Zq45gl58ahJZAmOxNzc_g2rL2fV-u2UOP2X0gSxayDCzZqEBn9V04F2eGD19BkO9E_tHV-uTvcBAB7T_RN1N1Wxtkgt4jjstcO0vfMUP02NSdh605-IOy0PPuQWFJWXZdue0wkYm8kjuyW6ui6xNgRx9_eNCg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                },
+                                                {
+                                                    "__typename": "User",
+                                                    "databaseId": "1487869630",
+                                                    "telemetryId": "1487869630",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc4Njk2MzAifQ",
+                                                    "officeUserId": "4a0cc5fb-a379-41ef-a8a6-8ac0dc764de0",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Rafael Godinho",
+                                                    "email": "rafael.godinho@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/33ngKn-t1ZTwX8rnvV-2XwgBTLXSfSpp_a09888ff-6b47-4b76-87d4-ef507b28f0e9?P1=1752973087&P2=104&P3=1&P4=M6FfrscwVpqY7ngmaU_a7ECxzdzSkDvVdt621cgcQp2-uI9tkxpPvrmk-FDiwpKr_wqCI5ezJdE3nz2ghjTwDiwUvdro8_xrPu2LSN8iec5nIC9HBVIXGBGvNrzpNJ7UgV3nTYw7POO1jwJqFPm5TngOF6uggAMicAKMh0rmHC6ehof0HBk6e3Pa391v8XTfeDs8Qk08JxqmGXSsyDUihAvb6IkXoLiBqSY1c6A7qa0nJdTcCq9BhXoZ4oCqHC15iMV4YdlM8fc5ZdNxRwybCCV97ffgMgXXJbdj8HPG5-K5hDW0TZRzns8cLXxfId_vVVjOosajVfXwfugUhCUxEA==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                },
+                                                {
+                                                    "__typename": "User",
+                                                    "databaseId": "1487780929",
+                                                    "telemetryId": "1487780929",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc3ODA5MjkifQ",
+                                                    "officeUserId": "bbbbc71e-7685-4a75-9076-0b9e1d0ee50d",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Prashant Bhide",
+                                                    "email": "prashant.bhide@microsoft.com",
+                                                    "jobTitle": null,
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/fT1qxdF83k2q74BdKHK-8DMGft9n0QwF_973c2fca-a8c3-4fc3-8bc5-ec7cf4d7271a?P1=1752973042&P2=104&P3=1&P4=M3C_jb59fWS8b5g0v14DR_GRU1qCcCCxVR-t1CBHTLhOXRmsUP_4WvYE8iiPHYIJ9Q00jURu-vzlSJsqqXsrarYUYrFAthN6c1FYjAtr5GKmgd1P312lZP25CUCluNoOWcgMQb7lvMd3xS7QlbPvP8LCcVwLQKcsEIQ7XhElN48D2MbcnpBw_1Y0QllxgjyTzE2VA-l5jqUvk6u7z6WbREqYvOJ8_1EjuotqxPjO4EUZleixCw6fjWf3nSytVpVA_qD_s0nx8ePu0J1fIpQizA73BGqrhKi4PRXAXKSCf3TAb_l67OoF-p85ccjbeUslmPltZ0sFL5Zsj3JzE5XnSg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            ]
+                                        },
+                                        "title": null,
+                                        "language": "en"
+                                    },
+                                    "defaultLanguage": "en",
+                                    "createdAt": "2024-09-06T23:38:43.539Z",
+                                    "updatedAt": "2024-09-06T23:38:44.285Z",
+                                    "version": 1,
+                                    "isEdited": false,
+                                    "viewerCanEdit": false,
+                                    "isDraft": false,
+                                    "scheduledPublishAt": null,
+                                    "isDeleted": false,
+                                    "viewerCanDelete": false,
+                                    "viewerCanShare": true,
+                                    "viewerHasUpvoted": false,
+                                    "messageParticipants": {
+                                        "totalCount": 5,
+                                        "pageInfo": {
+                                            "hasPreviousPage": false,
+                                            "startCursor": "MQ",
+                                            "hasNextPage": false,
+                                            "endCursor": "NQ"
+                                        },
+                                        "edges": [
+                                            {
+                                                "isTagged": false,
+                                                "isNotified": true,
+                                                "node": {
+                                                    "databaseId": "1626525548",
+                                                    "telemetryId": "1626525548",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2MjY1MjU1NDgifQ",
+                                                    "officeUserId": "faddf3e2-3c78-41fd-81a3-52c325be6ade",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Guhao Wu",
+                                                    "email": "guhao.wu@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/JbRSTfjb5KC0x1vh26VHD6mnvn-JmqBx_0d6203bf-3c90-4d9e-91c8-1e9e6c5a9aa4?P1=1752973085&P2=104&P3=1&P4=tCfh95a-FE-eS5F9NAW58QGYcdCpg5USsqEIdtHrgL2F_6A7uIuupvuSgW7krLcNy6BBTPMSg4eBVk1zaa67CQoEal-ICqkquw6fSTtvmQtOVtiTimTj7kpQw3TGiOMq_k-4GpYBzpYctmB8C16LFJebjcv6v6MGmFKG0Oh1xjbvN5Lfs2KrUrnLp1Rt3MB_cE3sv3rgr0ta-tO3Er7iXBczEh3gvHuZHxpzyJW8I5C-Aup2RdIYprkeKwZznRzzOhajRvrIV8yVtiIq6Oxt7m79qw3YOdbNn5NNL0t4XUW-foUiExajhqZ8TT0Pbr4PhdWNf9OVgiKYI81Ijnc4Yw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            },
+                                            {
+                                                "isTagged": false,
+                                                "isNotified": true,
+                                                "node": {
+                                                    "databaseId": "1487869630",
+                                                    "telemetryId": "1487869630",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc4Njk2MzAifQ",
+                                                    "officeUserId": "4a0cc5fb-a379-41ef-a8a6-8ac0dc764de0",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Rafael Godinho",
+                                                    "email": "rafael.godinho@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/33ngKn-t1ZTwX8rnvV-2XwgBTLXSfSpp_a09888ff-6b47-4b76-87d4-ef507b28f0e9?P1=1752973087&P2=104&P3=1&P4=M6FfrscwVpqY7ngmaU_a7ECxzdzSkDvVdt621cgcQp2-uI9tkxpPvrmk-FDiwpKr_wqCI5ezJdE3nz2ghjTwDiwUvdro8_xrPu2LSN8iec5nIC9HBVIXGBGvNrzpNJ7UgV3nTYw7POO1jwJqFPm5TngOF6uggAMicAKMh0rmHC6ehof0HBk6e3Pa391v8XTfeDs8Qk08JxqmGXSsyDUihAvb6IkXoLiBqSY1c6A7qa0nJdTcCq9BhXoZ4oCqHC15iMV4YdlM8fc5ZdNxRwybCCV97ffgMgXXJbdj8HPG5-K5hDW0TZRzns8cLXxfId_vVVjOosajVfXwfugUhCUxEA==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            },
+                                            {
+                                                "isTagged": true,
+                                                "isNotified": true,
+                                                "node": {
+                                                    "databaseId": "1487780929",
+                                                    "telemetryId": "1487780929",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc3ODA5MjkifQ",
+                                                    "officeUserId": "bbbbc71e-7685-4a75-9076-0b9e1d0ee50d",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Prashant Bhide",
+                                                    "email": "prashant.bhide@microsoft.com",
+                                                    "jobTitle": null,
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/fT1qxdF83k2q74BdKHK-8DMGft9n0QwF_973c2fca-a8c3-4fc3-8bc5-ec7cf4d7271a?P1=1752973042&P2=104&P3=1&P4=M3C_jb59fWS8b5g0v14DR_GRU1qCcCCxVR-t1CBHTLhOXRmsUP_4WvYE8iiPHYIJ9Q00jURu-vzlSJsqqXsrarYUYrFAthN6c1FYjAtr5GKmgd1P312lZP25CUCluNoOWcgMQb7lvMd3xS7QlbPvP8LCcVwLQKcsEIQ7XhElN48D2MbcnpBw_1Y0QllxgjyTzE2VA-l5jqUvk6u7z6WbREqYvOJ8_1EjuotqxPjO4EUZleixCw6fjWf3nSytVpVA_qD_s0nx8ePu0J1fIpQizA73BGqrhKi4PRXAXKSCf3TAb_l67OoF-p85ccjbeUslmPltZ0sFL5Zsj3JzE5XnSg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            },
+                                            {
+                                                "isTagged": false,
+                                                "isNotified": true,
+                                                "node": {
+                                                    "databaseId": "1494344941",
+                                                    "telemetryId": "1494344941",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0OTQzNDQ5NDEifQ",
+                                                    "officeUserId": "f28cce1c-f7da-4850-a989-9afd920ae9c6",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "David Waller",
+                                                    "email": "dwaller@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/MJxFRNMSC7KwcMmzxwQ8nrb8VWqVlJ6J_3f589c22-273f-4b07-8f5c-f498eeac99f7?P1=1752973170&P2=104&P3=1&P4=KEQRRUevXNl71u9cbcZ0_qWjc9q_LRXOYezm1LIpfJNHy98YY2gPvkEkTN9ufFUJOrQFyz1VuuDYC_YjTZpwDlQRNDYhgJkQJJ4o93w4XoxvIngd3uNRjDxDKRq23yD-tAE8FIQ-LI94nIGVaSjjrFp7ZqnZShALRox4xMpLlxB6_A6rUhDEMZ01jIIsUKOWjYoz0voNo8ZAfMpBtFSQV_08P_3blnLYxXBuDZZWjhsJ5OxekNH5pEpsowL-IBA8cik8qF6r3x2zwlFA1GXgb4yab8ZiiI_xIsz0whNx7vJ-iz5cxr11JsFm-V-aCrOQUVa1qQyX5I1Grv30UCFpJw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            },
+                                            {
+                                                "isTagged": false,
+                                                "isNotified": true,
+                                                "node": {
+                                                    "databaseId": "1489858274",
+                                                    "telemetryId": "1489858274",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODk4NTgyNzQifQ",
+                                                    "officeUserId": "816dec1c-08c5-4e39-abb8-951e355bf9c6",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Clark Breyman",
+                                                    "email": "clark.breyman@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/mwwb5rRP6rPDxMrPLW3VxVv3lQ8l6bZS_7558702b-ce22-4a7b-b207-d2cc5b72c00f?P1=1752973131&P2=104&P3=1&P4=aI3E0275Je2spbkKxR7buXSh4oqSryFYwgB4vQlM9cWGD5M1bVeeR9ZF7mguxJOwlcIZDsUNtfAiBV3tt0ugV9KU9e_iS2f3PO-YlwNoftnWSYLLuqLkz4TPgV5lLLY2RxbW9pek80NBazt98PBgs2sO_u_MtJWGoJWWb8BOM5VKVNfmbpTV0ZLY2Zq45gl58ahJZAmOxNzc_g2rL2fV-u2UOP2X0gSxayDCzZqEBn9V04F2eGD19BkO9E_tHV-uTvcBAB7T_RN1N1Wxtkgt4jjstcO0vfMUP02NSdh605-IOy0PPuQWFJWXZdue0wkYm8kjuyW6ui6xNgRx9_eNCg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "isQuestion": false,
+                                    "isArticle": false,
+                                    "sharedMessage": null,
+                                    "hasDeletedSharedMessage": false,
+                                    "threadLevel": "THREAD_STARTER",
+                                    "parentMessage": null,
+                                    "reactionsConnection": {
+                                        "totalCount": 5,
+                                        "likeCount": 1,
+                                        "loveCount": 2,
+                                        "laughCount": 0,
+                                        "thankCount": 0,
+                                        "celebrateCount": 0,
+                                        "sadCount": 0,
+                                        "agreeCount": 0,
+                                        "angryCount": 0,
+                                        "brainCount": 0,
+                                        "bullseyeCount": 0,
+                                        "confirmedCount": 0,
+                                        "cryingCount": 0,
+                                        "excitedCount": 0,
+                                        "goofyCount": 0,
+                                        "happyCount": 0,
+                                        "heartBrokenCount": 0,
+                                        "intenseLaughCount": 0,
+                                        "medalCount": 0,
+                                        "mindBlownCount": 0,
+                                        "praiseCount": 0,
+                                        "scaredCount": 0,
+                                        "shockedCount": 0,
+                                        "sillyCount": 0,
+                                        "smileCount": 0,
+                                        "starStruckCount": 0,
+                                        "supportCount": 0,
+                                        "surprisedCount": 0,
+                                        "takingNotesCount": 2,
+                                        "thinkingCount": 0,
+                                        "watchingCount": 0
+                                    },
+                                    "featuredReactions": {
+                                        "edges": [
+                                            {
+                                                "node": {
+                                                    "databaseId": "1582542621",
+                                                    "telemetryId": "1582542621",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE1ODI1NDI2MjEifQ",
+                                                    "officeUserId": "27f0f54e-af45-4be2-a711-5e91729ac043",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Sujeeth Thirumalai",
+                                                    "email": "suthirum@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/3Qtq-GR4J8p07Nvw-L3XczmtqQQ-1Bdg_848c7ca0-7d93-4510-8bc3-f42db8a10430?P1=1752974024&P2=104&P3=1&P4=CGs1-7V7mfDgYPKkJOAlYU1TEyajlIsPjfEnfdYPo105LdkW7ztTTc3aQSbEGiIHMOISiJzyZXYUq6pLBSMT4F6P42ya8qzc64MKrFVRB4DKk5rse322Wo6XRo8wbb7_JagszoY5YIZumWBoXqhH4dO9PSd7knkQojYWjWub5HvGhCEAGyZZQVOFgINfq7uR6wOKvhKv75pqNTHiZB-5Yd6tylFxOvpZRVHdnOG8bSaBv9jrvG7Zdyo-OAHxYZnE8i0QREq_nwp2eMcGtrGJMbwE0wzdBUnuSwEjinCDc1x8_SCD6B6vYapm2AtrNTRsZ_i4L55pjm8iQRvMhoJYJg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": {
+                                                        "campaign": {
+                                                            "id": "eyJfdHlwZSI6IkNhbXBhaWduIiwiaWQiOiIzMTY0MjI2MjA0NDI0Nzg4In0",
+                                                            "sashImageUrl": "https://mugshot0.assets-yammer.com/mugshot/managed/images/MiyrNMdju3nvJZT-9PlbPXyU5prcsmvYbsYuvsE7ekWoQ_GIzxQapXWLpaU7PoU8tHlZhFmHINNkzgP17dq0nGGnPDQaSkaU?P1=1752972966&P2=104&P3=1&P4=Oxx1b0R6g5AZsmvK_3jSqDccAfuPdvP95gDBPxSVZ_VCPBoOw-lQXrzm7bADP24E3d8CI9iiuphlev44dM8KNaomy_UKvW56ambeCQ6u2wNHVJArtgq8R048FdZTfg2G3IL115qO7-F9G2pBnUr7f0oLZyy4tLWzWX1ZcRuBiXz_U_oAABHx8wWiJ_d-e1agtGG4f1uBh6wMQuTtxK0Q6G2ZZ_aytsmECZEQfFKp5uWIK1a5jUfjFQOpS3Tp0loR5BLy254i8IK0j7nT5G2KKFT5k_qotyKz6OVHpe2am_D8jtdA2J3DEwL9nbi4DVYL1kwOaYOShyOlZihyNzeHSA=="
+                                                        }
+                                                    },
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1487780929",
+                                                    "telemetryId": "1487780929",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc3ODA5MjkifQ",
+                                                    "officeUserId": "bbbbc71e-7685-4a75-9076-0b9e1d0ee50d",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Prashant Bhide",
+                                                    "email": "prashant.bhide@microsoft.com",
+                                                    "jobTitle": null,
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/fT1qxdF83k2q74BdKHK-8DMGft9n0QwF_973c2fca-a8c3-4fc3-8bc5-ec7cf4d7271a?P1=1752973042&P2=104&P3=1&P4=M3C_jb59fWS8b5g0v14DR_GRU1qCcCCxVR-t1CBHTLhOXRmsUP_4WvYE8iiPHYIJ9Q00jURu-vzlSJsqqXsrarYUYrFAthN6c1FYjAtr5GKmgd1P312lZP25CUCluNoOWcgMQb7lvMd3xS7QlbPvP8LCcVwLQKcsEIQ7XhElN48D2MbcnpBw_1Y0QllxgjyTzE2VA-l5jqUvk6u7z6WbREqYvOJ8_1EjuotqxPjO4EUZleixCw6fjWf3nSytVpVA_qD_s0nx8ePu0J1fIpQizA73BGqrhKi4PRXAXKSCf3TAb_l67OoF-p85ccjbeUslmPltZ0sFL5Zsj3JzE5XnSg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1694563654",
+                                                    "telemetryId": "1694563654",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2OTQ1NjM2NTQifQ",
+                                                    "officeUserId": "fb5bdd30-7049-49bb-9e95-b4ab4d64bcec",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Shivani Jha",
+                                                    "email": "shivani.jha@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/N3-1ZTDQnCxwcm6t1wqG4hGP0NXPBRx7_9812421d-868d-45e2-9939-0a81cb36ec07?P1=1752973953&P2=104&P3=1&P4=KjngA-8hTJ7sMOY0mQ0ktELsIXEM_Jyrxkk7WEEYrACfqdtCSuN7P7WMLnGS3t8wDbA74aK2nQvgvynKb3VPd7Yloy_4fhxabbUR_61INa--S2uMVVhee1gXu2h6EQofgvPpVmpGGVixPQYJBBvY0mR_aNTj2p-Mk-c6HoDjLEHpama5n1xiWRgc2yEEZRgwzorTgXzC-Y4RvExUAEkmYSvueGsjIdEMtHj2MjPLq9mJQVgogg9XXkOT6u-_uNOitS6VgxjpILI6SAt-UwdbW6TznImE6h5KvSZCUJIX19r5Ki0iir-lblEhuPk79LnNM_JSv69Swo2aaHE9EHzxoQ==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "NONE"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1618077758",
+                                                    "telemetryId": "1618077758",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2MTgwNzc3NTgifQ",
+                                                    "officeUserId": "e177370b-b427-4f00-be32-edf1c7ce7def",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Preethi Ramesh",
+                                                    "email": "prramesh@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/k2v0ks9SFh83wL9phCj7T3M3SWcVChL7_1bccc288-669d-453e-ac64-a5db9fd2ef95?P1=1752973057&P2=104&P3=1&P4=bnwrbEgSExLqs32oLfB5SR8SC0GIW9SSeaZG8EkfGg7EtRnTWkaR_K5oX2XtDbioqBTQTxl0EWa0D3NQ98n4MvZelSrJ-Zk6_L4weZz9qR4Ro3RPSScpgyohrN3c5jE22DMiwkDXSd_0D-jBEeB1hCH6rgU5qCMwDYRF2FSIOhj5zZseLlpI1dGFH0CpbY4p-tQAi4k_Pu4Zm9VN1o-1miTQlLcz1NaTNdnBqtzgy7kMk0mEAxNTix1rn4DqWXCXQhYekdxoYL4XjcYN9D25Z72NtO0VubqWDWrrLlGnX6POhoObju7D1RIcOoIEfndUW2EdR0E8Q2NxBvi_KiBkEw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1083315216384",
+                                                    "telemetryId": "1083315216384",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjEwODMzMTUyMTYzODQifQ",
+                                                    "officeUserId": "09003ea6-df79-4931-891d-af422ee3b960",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Jesse Scott",
+                                                    "email": "jessescott@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/89lsZHnMTVrHMLKz-Wb1lWGLCt1tX5Vr_a13a11ca-fa73-4b6a-8866-ed95c8f4818d?P1=1752973071&P2=104&P3=1&P4=mDs4Bkq_iZm1UHWGwsgJN_yUg2DHzBSJ4XcLyBUq5qEhn_09Qqs2qUekeJ-026ubmHmtkzwfavgnWxiuGu92Pu9PuLamUd4-n6SqxTMYV9e9CKLVdbQmeYg03ESYonZI7YRAi3qP17DQXBrKS8BpTh70rmt-n1hxm_SLPMOQZ8x7lkfoc7i5FVmdGmogSFR78JIHmGHihnqCDGKo2mYXkXxYCw4XjI7ynEycIaXV-T3a0e4K-fMA9vM0a7Wal8l_t2dP91IVE6eS-xXX711ezBnntX7AH6bWZDCkiARQJNKcXHpnHMiJBp9Is5su4Eq4yGPO2qpVxVfNxporurENqQ==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_LIGHT"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "likeFeaturedReactions": {
+                                        "edges": [
+                                            {
+                                                "node": {
+                                                    "databaseId": "1582542621",
+                                                    "telemetryId": "1582542621",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE1ODI1NDI2MjEifQ",
+                                                    "officeUserId": "27f0f54e-af45-4be2-a711-5e91729ac043",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Sujeeth Thirumalai",
+                                                    "email": "suthirum@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/3Qtq-GR4J8p07Nvw-L3XczmtqQQ-1Bdg_848c7ca0-7d93-4510-8bc3-f42db8a10430?P1=1752974024&P2=104&P3=1&P4=CGs1-7V7mfDgYPKkJOAlYU1TEyajlIsPjfEnfdYPo105LdkW7ztTTc3aQSbEGiIHMOISiJzyZXYUq6pLBSMT4F6P42ya8qzc64MKrFVRB4DKk5rse322Wo6XRo8wbb7_JagszoY5YIZumWBoXqhH4dO9PSd7knkQojYWjWub5HvGhCEAGyZZQVOFgINfq7uR6wOKvhKv75pqNTHiZB-5Yd6tylFxOvpZRVHdnOG8bSaBv9jrvG7Zdyo-OAHxYZnE8i0QREq_nwp2eMcGtrGJMbwE0wzdBUnuSwEjinCDc1x8_SCD6B6vYapm2AtrNTRsZ_i4L55pjm8iQRvMhoJYJg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": {
+                                                        "campaign": {
+                                                            "id": "eyJfdHlwZSI6IkNhbXBhaWduIiwiaWQiOiIzMTY0MjI2MjA0NDI0Nzg4In0",
+                                                            "sashImageUrl": "https://mugshot0.assets-yammer.com/mugshot/managed/images/MiyrNMdju3nvJZT-9PlbPXyU5prcsmvYbsYuvsE7ekWoQ_GIzxQapXWLpaU7PoU8tHlZhFmHINNkzgP17dq0nGGnPDQaSkaU?P1=1752972966&P2=104&P3=1&P4=Oxx1b0R6g5AZsmvK_3jSqDccAfuPdvP95gDBPxSVZ_VCPBoOw-lQXrzm7bADP24E3d8CI9iiuphlev44dM8KNaomy_UKvW56ambeCQ6u2wNHVJArtgq8R048FdZTfg2G3IL115qO7-F9G2pBnUr7f0oLZyy4tLWzWX1ZcRuBiXz_U_oAABHx8wWiJ_d-e1agtGG4f1uBh6wMQuTtxK0Q6G2ZZ_aytsmECZEQfFKp5uWIK1a5jUfjFQOpS3Tp0loR5BLy254i8IK0j7nT5G2KKFT5k_qotyKz6OVHpe2am_D8jtdA2J3DEwL9nbi4DVYL1kwOaYOShyOlZihyNzeHSA=="
+                                                        }
+                                                    },
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "loveFeaturedReactions": {
+                                        "edges": [
+                                            {
+                                                "node": {
+                                                    "databaseId": "1487780929",
+                                                    "telemetryId": "1487780929",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE0ODc3ODA5MjkifQ",
+                                                    "officeUserId": "bbbbc71e-7685-4a75-9076-0b9e1d0ee50d",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Prashant Bhide",
+                                                    "email": "prashant.bhide@microsoft.com",
+                                                    "jobTitle": null,
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/fT1qxdF83k2q74BdKHK-8DMGft9n0QwF_973c2fca-a8c3-4fc3-8bc5-ec7cf4d7271a?P1=1752973042&P2=104&P3=1&P4=M3C_jb59fWS8b5g0v14DR_GRU1qCcCCxVR-t1CBHTLhOXRmsUP_4WvYE8iiPHYIJ9Q00jURu-vzlSJsqqXsrarYUYrFAthN6c1FYjAtr5GKmgd1P312lZP25CUCluNoOWcgMQb7lvMd3xS7QlbPvP8LCcVwLQKcsEIQ7XhElN48D2MbcnpBw_1Y0QllxgjyTzE2VA-l5jqUvk6u7z6WbREqYvOJ8_1EjuotqxPjO4EUZleixCw6fjWf3nSytVpVA_qD_s0nx8ePu0J1fIpQizA73BGqrhKi4PRXAXKSCf3TAb_l67OoF-p85ccjbeUslmPltZ0sFL5Zsj3JzE5XnSg==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1694563654",
+                                                    "telemetryId": "1694563654",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2OTQ1NjM2NTQifQ",
+                                                    "officeUserId": "fb5bdd30-7049-49bb-9e95-b4ab4d64bcec",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Shivani Jha",
+                                                    "email": "shivani.jha@microsoft.com",
+                                                    "jobTitle": "SENIOR SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/N3-1ZTDQnCxwcm6t1wqG4hGP0NXPBRx7_9812421d-868d-45e2-9939-0a81cb36ec07?P1=1752973953&P2=104&P3=1&P4=KjngA-8hTJ7sMOY0mQ0ktELsIXEM_Jyrxkk7WEEYrACfqdtCSuN7P7WMLnGS3t8wDbA74aK2nQvgvynKb3VPd7Yloy_4fhxabbUR_61INa--S2uMVVhee1gXu2h6EQofgvPpVmpGGVixPQYJBBvY0mR_aNTj2p-Mk-c6HoDjLEHpama5n1xiWRgc2yEEZRgwzorTgXzC-Y4RvExUAEkmYSvueGsjIdEMtHj2MjPLq9mJQVgogg9XXkOT6u-_uNOitS6VgxjpILI6SAt-UwdbW6TznImE6h5KvSZCUJIX19r5Ki0iir-lblEhuPk79LnNM_JSv69Swo2aaHE9EHzxoQ==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "NONE"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "laughFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "celebrateFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "thankFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "sadFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "agreeFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "angryFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "brainFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "bullseyeFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "confirmedFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "cryingFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "excitedFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "goofyFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "happyFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "heartBrokenFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "intenseLaughFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "medalFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "mindBlownFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "praiseFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "scaredFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "shockedFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "sillyFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "smileFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "starStruckFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "supportFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "surprisedFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "takingNotesFeaturedReactions": {
+                                        "edges": [
+                                            {
+                                                "node": {
+                                                    "databaseId": "1618077758",
+                                                    "telemetryId": "1618077758",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE2MTgwNzc3NTgifQ",
+                                                    "officeUserId": "e177370b-b427-4f00-be32-edf1c7ce7def",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Preethi Ramesh",
+                                                    "email": "prramesh@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/k2v0ks9SFh83wL9phCj7T3M3SWcVChL7_1bccc288-669d-453e-ac64-a5db9fd2ef95?P1=1752973057&P2=104&P3=1&P4=bnwrbEgSExLqs32oLfB5SR8SC0GIW9SSeaZG8EkfGg7EtRnTWkaR_K5oX2XtDbioqBTQTxl0EWa0D3NQ98n4MvZelSrJ-Zk6_L4weZz9qR4Ro3RPSScpgyohrN3c5jE22DMiwkDXSd_0D-jBEeB1hCH6rgU5qCMwDYRF2FSIOhj5zZseLlpI1dGFH0CpbY4p-tQAi4k_Pu4Zm9VN1o-1miTQlLcz1NaTNdnBqtzgy7kMk0mEAxNTix1rn4DqWXCXQhYekdxoYL4XjcYN9D25Z72NtO0VubqWDWrrLlGnX6POhoObju7D1RIcOoIEfndUW2EdR0E8Q2NxBvi_KiBkEw==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_MEDIUM"
+                                                }
+                                            },
+                                            {
+                                                "node": {
+                                                    "databaseId": "1083315216384",
+                                                    "telemetryId": "1083315216384",
+                                                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjEwODMzMTUyMTYzODQifQ",
+                                                    "officeUserId": "09003ea6-df79-4931-891d-af422ee3b960",
+                                                    "network": {
+                                                        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjEwNyJ9",
+                                                        "displayName": "Microsoft",
+                                                        "permalink": "microsoft.com"
+                                                    },
+                                                    "displayName": "Jesse Scott",
+                                                    "email": "jessescott@microsoft.com",
+                                                    "jobTitle": "PRINCIPAL SOFTWARE ENGINEER",
+                                                    "isGuest": false,
+                                                    "originNetworkBadgeDisplayName": null,
+                                                    "originNetworkId": null,
+                                                    "avatarUrlTemplate": "https://mugshot0.assets-yammer.com/mugshot/images/89lsZHnMTVrHMLKz-Wb1lWGLCt1tX5Vr_a13a11ca-fa73-4b6a-8866-ed95c8f4818d?P1=1752973071&P2=104&P3=1&P4=mDs4Bkq_iZm1UHWGwsgJN_yUg2DHzBSJ4XcLyBUq5qEhn_09Qqs2qUekeJ-026ubmHmtkzwfavgnWxiuGu92Pu9PuLamUd4-n6SqxTMYV9e9CKLVdbQmeYg03ESYonZI7YRAi3qP17DQXBrKS8BpTh70rmt-n1hxm_SLPMOQZ8x7lkfoc7i5FVmdGmogSFR78JIHmGHihnqCDGKo2mYXkXxYCw4XjI7ynEycIaXV-T3a0e4K-fMA9vM0a7Wal8l_t2dP91IVE6eS-xXX711ezBnntX7AH6bWZDCkiARQJNKcXHpnHMiJBp9Is5su4Eq4yGPO2qpVxVfNxporurENqQ==&size={width}x{height}",
+                                                    "hasDefaultAvatar": false,
+                                                    "campaignSash": null,
+                                                    "reactionAccentColor": "FITZPATRICK_SCALE_LIGHT"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "thinkingFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "watchingFeaturedReactions": {
+                                        "edges": []
+                                    },
+                                    "viewerHasLiked": false,
+                                    "viewerReaction": null,
+                                    "featuredQuestionReplyUpvotes": {
+                                        "totalCount": 0,
+                                        "edges": []
+                                    },
+                                    "attachments": {
+                                        "totalCount": 0,
+                                        "edges": []
+                                    },
+                                    "headerImage": null,
+                                    "messageContentSourceFile": null
+                                },
+                                "replySmallFileUploadUrl": "https://filesng.yammer.com/v4/uploadSmallFile/network/107/group/5914746880/thread/2964448894271488?thirdpartycookiefix=true&no_temp_auth=true&one_player_enabled=true",
+                                "participants": {
+                                    "pageInfo": {
+                                        "hasPreviousPage": false,
+                                        "startCursor": null,
+                                        "hasNextPage": false,
+                                        "endCursor": null
+                                    },
+                                    "edges": [],
+                                    "totalCount": 0
+                                },
+                                "updatedAt": "2024-09-06T23:38:43.940Z",
+                                "topics": {
+                                    "edges": []
+                                },
+                                "seenByCount": 31,
+                                "isAnnouncement": false,
+                                "isClosed": false,
+                                "isDirectMessage": false,
+                                "isForcedNotification": false,
+                                "broadcast": null,
+                                "promotionEndTime": null,
+                                "markSeenKey": "eyJ0aHJlYWRfaWQiOiIyOTY0NDQ4ODk0MjcxNDg4IiwibmV3ZXN0X21lc3NhZ2VfaWQiOiIyOTY0NDQ4ODk0MjcxNDg4IiwibmV0d29ya19pZCI6IjEwNyJ9",
+                                "wallOwner": null,
+                                "scope": {
+                                    "__typename": "GroupScope"
+                                },
+                                "isVisibleInNetworkQuestionFeeds": false
+                            }
+                        }
+                    ],
+                    "telemetryContext": {
+                        "type": "GROUP",
+                        "subtype": "ALL",
+                        "telemetryId": "5914746880"
+                    },
+                    "sortedBy": "UPDATED_AT"
+                },
+                "pinnedThreads": [],
+                "unseenThreads": {
+                    "hasMore": false,
+                    "threads": []
+                }
+            }
+        }
+    }
+}

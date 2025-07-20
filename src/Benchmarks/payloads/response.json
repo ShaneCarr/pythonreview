@@ -1,0 +1,362 @@
+{
+  "data": {
+    "group": {
+      "databaseId": "33611777",
+      "telemetryId": "33611777",
+      "id": "eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIzMzYxMTc3NyJ9",
+      "officeUnifiedGroupId": "db525dcc-e833-4874-8b4d-95083d9f9bce",
+      "network": {
+        "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjE2Nzc3MjE3In0"
+      },
+      "avatarUrlTemplate": "https://mugshot.c5devlab3.labs.yammer.dev/mugshot/images/group_profile.png?P1=1752903576&P2=101&P3=1&P4=NXliELMkK4Ci0Q20-o9oHKd0rs3Jce6E-nBvH2TfNuOaR9nwUAYaZNPYKUG5Cy6dPKb5WSZQ8-5E55EmdVaTfw==&size={width}x{height}",
+      "hasDefaultAvatar": true,
+      "displayName": "helper_group_5nk09",
+      "description": "creating group data",
+      "isExternal": false,
+      "isOfficial": false,
+      "guestsCount": 0,
+      "threadStarterSmallFileUploadUrl": "https://filesng.c5devlab3.labs.yammer.dev/v4/uploadSmallFile/network/16777217/group/33611777?thirdpartycookiefix=true",
+      "isMultiTenantOrganizationGroup": false,
+      "isMoveThreadToThisGroupRestricted": false,
+      "feed": {
+        "threads": {
+          "realtimeChannelId": "NToxNjc3NzIxNzozMzYxMTc3Nw",
+          "pageInfo": {
+            "hasPreviousPage": false,
+            "startCursor": "eyJ0aHJlYWRfaWQiOjM0MTYwOTc1ODQwNTQzMDQsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFKMDc0SFYzRSIsInRocmVhZF9zb3J0IjoiYWdlIiwibWVzc2FnZV9zb3J0IjoidXB2b3RlX3JhbmtfdGhlbl9jcmVhdGVkX2F0In0",
+            "hasNextPage": false,
+            "endCursor": "eyJ0aHJlYWRfaWQiOjM0MTYwOTc1ODQwNTQzMDQsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFKMDc0SFYzRSIsInRocmVhZF9zb3J0IjoiYWdlIiwibWVzc2FnZV9zb3J0IjoidXB2b3RlX3JhbmtfdGhlbl9jcmVhdGVkX2F0In0"
+          },
+          "edges": [
+            {
+              "cursor": "eyJ0aHJlYWRfaWQiOjM0MTYwOTc1ODQwNTQzMDQsInBhZ2luYXRpb25fa2V5IjoiMDAwMDAwMDFKMDc0SFYzRSIsInRocmVhZF9zb3J0IjoiYWdlIiwibWVzc2FnZV9zb3J0IjoidXB2b3RlX3JhbmtfdGhlbl9jcmVhdGVkX2F0In0",
+              "sortKey": "00000001J074HV3E",
+              "node": {
+                "topLevelReplies": {
+                  "pageInfo": {
+                    "hasPreviousPage": false,
+                    "startCursor": null,
+                    "hasNextPage": false,
+                    "endCursor": null
+                  },
+                  "extendedPageInfo": {
+                    "totalPreviousCount": 0,
+                    "totalUnseenPreviousCount": 0,
+                    "totalNextCount": 0,
+                    "totalUnseenNextCount": 0
+                  },
+                  "sortedBy": "CREATED_AT",
+                  "totalCount": 0,
+                  "edges": []
+                },
+                "bestReply": null,
+                "verifiedReply": null,
+                "id": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMzQxNjA5NzU4NDA1NDMwNCJ9",
+                "databaseId": "3416097584054304",
+                "telemetryId": "3416097584054304",
+                "realtimeChannelId": "MTM6MTY3NzcyMTc6MzQxNjA5NzU4NDA1NDMwNA",
+                "messageReactionsRealtimeChannelId": "/threads/3416097584054304/reactions",
+                "network": {
+                  "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjE2Nzc3MjE3In0"
+                },
+                "group": {
+                  "databaseId": "33611777",
+                  "telemetryId": "33611777",
+                  "id": "eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIzMzYxMTc3NyJ9",
+                  "officeUnifiedGroupId": "db525dcc-e833-4874-8b4d-95083d9f9bce",
+                  "network": {
+                    "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjE2Nzc3MjE3In0"
+                  },
+                  "avatarUrlTemplate": "https://mugshot.c5devlab3.labs.yammer.dev/mugshot/images/group_profile.png?P1=1752903576&P2=101&P3=1&P4=NXliELMkK4Ci0Q20-o9oHKd0rs3Jce6E-nBvH2TfNuOaR9nwUAYaZNPYKUG5Cy6dPKb5WSZQ8-5E55EmdVaTfw==&size={width}x{height}",
+                  "hasDefaultAvatar": true,
+                  "displayName": "helper_group_5nk09",
+                  "description": "creating group data",
+                  "isExternal": false,
+                  "isOfficial": false,
+                  "guestsCount": 0,
+                  "threadStarterSmallFileUploadUrl": "https://filesng.c5devlab3.labs.yammer.dev/v4/uploadSmallFile/network/16777217/group/33611777?thirdpartycookiefix=true",
+                  "isMultiTenantOrganizationGroup": false,
+                  "isMoveThreadToThisGroupRestricted": false
+                },
+                "hasAttachments": false,
+                "hiddenForNetworkInDiscovery": "NOT_HIDDEN",
+                "shares": {
+                  "totalCount": 0
+                },
+                "viewerHasUnreadMessages": false,
+                "viewerCanAddOrRemoveTopic": true,
+                "viewerCanBookmark": true,
+                "viewerCanClose": true,
+                "viewerCanDelete": true,
+                "viewerCanHideForNetworkInDiscovery": true,
+                "viewerCanMarkBestReply": false,
+                "viewerCanMarkVerifiedReply": false,
+                "viewerCanPin": true,
+                "viewerCanPromote": true,
+                "viewerCanMarkAsQuestion": true,
+                "viewerCanMove": true,
+                "viewerCanReply": true,
+                "viewerCanAccessThreadActivity": true,
+                "viewerIsFollowing": true,
+                "viewerHasSeenThreadStarter": true,
+                "viewerHasBookmarked": false,
+                "viewerLastSeenMessage": {
+                  "id": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjM0MTYwOTc1ODQwNTQzMDQifQ"
+                },
+                "viewerMutationId": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMzQxNjA5NzU4NDA1NDMwNCJ9",
+                "threadStarter": {
+                  "id": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjM0MTYwOTc1ODQwNTQzMDQifQ",
+                  "viewerMutationId": "eyJfdHlwZSI6Ik1lc3NhZ2UiLCJpZCI6IjM0MTYwOTc1ODQwNTQzMDQifQ",
+                  "telemetryId": "3416097584054304",
+                  "thread": {
+                    "id": "eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMzQxNjA5NzU4NDA1NDMwNCJ9"
+                  },
+                  "sender": {
+                    "__typename": "User",
+                    "databaseId": "2147483649",
+                    "telemetryId": "2147483649",
+                    "id": "eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjIxNDc0ODM2NDkifQ",
+                    "officeUserId": "2c894775-401c-432c-8d1e-afa0b6d2a2f7",
+                    "network": {
+                      "id": "eyJfdHlwZSI6Ik5ldHdvcmsiLCJpZCI6IjE2Nzc3MjE3In0",
+                      "displayName": "a830edad9050849sdmcfx2dyjrh.onmicrosoft.com",
+                      "permalink": "a830edad9050849sdmcfx2dyjrh.onmicrosoft.com"
+                    },
+                    "displayName": "admin@a830edad9050849sdmcfx2dyjrh.onmicrosoft.com",
+                    "email": "admin@a830edad9050849sdmcfx2dyjrh.onmicrosoft.com",
+                    "jobTitle": null,
+                    "isGuest": false,
+                    "originNetworkBadgeDisplayName": null,
+                    "originNetworkId": null,
+                    "avatarUrlTemplate": "",
+                    "hasDefaultAvatar": true,
+                    "campaignSash": null
+                  },
+                  "senderBadges": [
+                    "ADMIN"
+                  ],
+                  "content": {
+                    "__typename": "NormalMessageContent"
+                  },
+                  "body": {
+                    "serializedContentState": "{\"blocks\":[{\"data\":{},\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"82na2\",\"text\":\"Community draft\",\"type\":\"unstyled\"}],\"entityMap\":{}}",
+                    "references": []
+                  },
+                  "announcementAudience": null,
+                  "announcementAudienceIds": [],
+                  "announcementNotificationTargets": [],
+                  "title": null,
+                  "language": null,
+                  "createdAt": "2025-07-15T13:32:01.006Z",
+                  "updatedAt": "2025-07-15T13:32:02.089Z",
+                  "version": 1,
+                  "isEdited": false,
+                  "viewerCanEdit": true,
+                  "isDraft": false,
+                  "scheduledPublishAt": null,
+                  "isDeleted": false,
+                  "viewerCanDelete": true,
+                  "viewerCanShare": true,
+                  "viewerHasUpvoted": false,
+                  "messageParticipants": {
+                    "totalCount": 0,
+                    "pageInfo": {
+                      "hasPreviousPage": false,
+                      "startCursor": null,
+                      "hasNextPage": false,
+                      "endCursor": null
+                    },
+                    "edges": []
+                  },
+                  "isQuestion": false,
+                  "isArticle": false,
+                  "sharedMessage": null,
+                  "hasDeletedSharedMessage": false,
+                  "threadLevel": "THREAD_STARTER",
+                  "parentMessage": null,
+                  "reactionsConnection": {
+                    "totalCount": 0,
+                    "likeCount": 0,
+                    "loveCount": 0,
+                    "laughCount": 0,
+                    "thankCount": 0,
+                    "celebrateCount": 0,
+                    "sadCount": 0,
+                    "agreeCount": 0,
+                    "angryCount": 0,
+                    "brainCount": 0,
+                    "bullseyeCount": 0,
+                    "confirmedCount": 0,
+                    "cryingCount": 0,
+                    "excitedCount": 0,
+                    "goofyCount": 0,
+                    "happyCount": 0,
+                    "heartBrokenCount": 0,
+                    "intenseLaughCount": 0,
+                    "medalCount": 0,
+                    "mindBlownCount": 0,
+                    "praiseCount": 0,
+                    "scaredCount": 0,
+                    "shockedCount": 0,
+                    "sillyCount": 0,
+                    "smileCount": 0,
+                    "starStruckCount": 0,
+                    "supportCount": 0,
+                    "surprisedCount": 0,
+                    "takingNotesCount": 0,
+                    "thinkingCount": 0,
+                    "watchingCount": 0
+                  },
+                  "featuredReactions": {
+                    "edges": []
+                  },
+                  "likeFeaturedReactions": {
+                    "edges": []
+                  },
+                  "loveFeaturedReactions": {
+                    "edges": []
+                  },
+                  "laughFeaturedReactions": {
+                    "edges": []
+                  },
+                  "celebrateFeaturedReactions": {
+                    "edges": []
+                  },
+                  "thankFeaturedReactions": {
+                    "edges": []
+                  },
+                  "sadFeaturedReactions": {
+                    "edges": []
+                  },
+                  "agreeFeaturedReactions": {
+                    "edges": []
+                  },
+                  "angryFeaturedReactions": {
+                    "edges": []
+                  },
+                  "brainFeaturedReactions": {
+                    "edges": []
+                  },
+                  "bullseyeFeaturedReactions": {
+                    "edges": []
+                  },
+                  "confirmedFeaturedReactions": {
+                    "edges": []
+                  },
+                  "cryingFeaturedReactions": {
+                    "edges": []
+                  },
+                  "excitedFeaturedReactions": {
+                    "edges": []
+                  },
+                  "goofyFeaturedReactions": {
+                    "edges": []
+                  },
+                  "happyFeaturedReactions": {
+                    "edges": []
+                  },
+                  "heartBrokenFeaturedReactions": {
+                    "edges": []
+                  },
+                  "intenseLaughFeaturedReactions": {
+                    "edges": []
+                  },
+                  "medalFeaturedReactions": {
+                    "edges": []
+                  },
+                  "mindBlownFeaturedReactions": {
+                    "edges": []
+                  },
+                  "praiseFeaturedReactions": {
+                    "edges": []
+                  },
+                  "scaredFeaturedReactions": {
+                    "edges": []
+                  },
+                  "shockedFeaturedReactions": {
+                    "edges": []
+                  },
+                  "sillyFeaturedReactions": {
+                    "edges": []
+                  },
+                  "smileFeaturedReactions": {
+                    "edges": []
+                  },
+                  "starStruckFeaturedReactions": {
+                    "edges": []
+                  },
+                  "supportFeaturedReactions": {
+                    "edges": []
+                  },
+                  "surprisedFeaturedReactions": {
+                    "edges": []
+                  },
+                  "takingNotesFeaturedReactions": {
+                    "edges": []
+                  },
+                  "thinkingFeaturedReactions": {
+                    "edges": []
+                  },
+                  "watchingFeaturedReactions": {
+                    "edges": []
+                  },
+                  "viewerHasLiked": false,
+                  "viewerReaction": null,
+                  "featuredQuestionReplyUpvotes": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "attachments": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "headerImage": null,
+                  "messageContentSourceFile": null
+                },
+                "replySmallFileUploadUrl": "https://filesng.c5devlab3.labs.yammer.dev/v4/uploadSmallFile/network/16777217/group/33611777/thread/3416097584054304?thirdpartycookiefix=true",
+                "participants": {
+                  "pageInfo": {
+                    "hasPreviousPage": false,
+                    "startCursor": null,
+                    "hasNextPage": false,
+                    "endCursor": null
+                  },
+                  "edges": [],
+                  "totalCount": 0
+                },
+                "updatedAt": "2025-07-15T13:32:01.572Z",
+                "topics": {
+                  "edges": []
+                },
+                "seenByCount": 0,
+                "isAnnouncement": false,
+                "isClosed": false,
+                "isDirectMessage": false,
+                "isForcedNotification": false,
+                "broadcast": null,
+                "promotionEndTime": null,
+                "markSeenKey": "eyJ0aHJlYWRfaWQiOiIzNDE2MDk3NTg0MDU0MzA0IiwibmV3ZXN0X21lc3NhZ2VfaWQiOiIzNDE2MDk3NTg0MDU0MzA0IiwibmV0d29ya19pZCI6IjE2Nzc3MjE3In0",
+                "wallOwner": null,
+                "scope": {
+                  "__typename": "GroupScope"
+                },
+                "isVisibleInNetworkQuestionFeeds": false
+              }
+            }
+          ],
+          "telemetryContext": {
+            "type": "GROUP",
+            "subtype": "ALL",
+            "telemetryId": "33611777"
+          },
+          "sortedBy": "CREATED_AT"
+        },
+        "pinnedThreads": [],
+        "unseenThreads": {
+          "hasMore": false,
+          "threads": []
+        }
+      }
+    }
+  }
+}
