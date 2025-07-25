@@ -1087,4 +1087,5 @@ if __name__ == "__main__":
         pass  # pytest will handle the test
     else:
         # Being run directly - do the full demo
-        run_full_demo()
+        # run_full_demo()
+        test_from_input_file()
