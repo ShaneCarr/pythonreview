@@ -1,5 +1,8 @@
 from dataclasses import dataclass
 
+from magic.compat import none_magic
+
+
 # data class: Auto-generates __init__, __repr__, __eq__,
 @dataclass
 class MythicPet:
@@ -11,11 +14,47 @@ class MythicPet:
     def __post_init__(self):
         print(f"MythicPet: {self.name} enters world")
 
+    def status(self):
+        print("todo status")
+
+
+    def feed(self):
+        print("todo feed")
+
+
+    def rest(self):
+        print("todo rest")
+
+
+    def train(self):
+        print("todo train")
+
 def main():
-    mp = MythicPet("dragon")
-    print(mp.name)
+    pet = MythicPet("dragon")
+    print(pet.name)
+
+    while True:
+        pet.status()
+
+        print("\nChoose an Action")
+        print("1 Feed")
+        print("2 Rest")
+        print("3 Train")
+        print("4 Quit game")
+
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            pet.feed()
+        elif choice == "2":
+            pet.rest()
+        elif choice == "3":
+            pet.train()
+        elif choice == "4":
+            pet.rest()
+        elif choice == "quit":
+            break
+        else:
+            print("Invalid choice")
 if __name__ == "__main__":
     main()
-
-
 
